@@ -1,0 +1,28 @@
+[
+  {
+    "id": 1,
+    "view": true,
+    "icon": "bx bx-hotel",
+    "active": false,
+    "name": "Hoteles",
+    "path": "/dashboard/hoteles",
+    "roles": [
+      {
+        "name": "agente"
+      }
+    ]
+  },
+  {
+    "id": 2,
+    "view": true,
+    "icon": "bx bx-user-check",
+    "active": false,
+    "name": "Reservaciones",
+    "path": "/dashboard/reservaciones",
+    "roles": [
+      {
+        "name": "agente"
+      }
+    ]
+  }
+]

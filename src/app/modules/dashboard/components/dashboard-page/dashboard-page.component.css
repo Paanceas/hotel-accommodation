@@ -1,0 +1,9 @@
+.sidebar{
+  min-width: var(--nav-width);
+}
+.body{
+  min-width: calc(100vw - var(--nav-width));
+}
+.body-expander{
+  min-width: calc(100vw - calc(var(--nav-width) + 9.25rem)) !important;
+}

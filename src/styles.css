@@ -26,3 +26,11 @@
   margin: 0;
   padding: 0;
 }
+
+a {
+  text-decoration: none !important;
+}
+
+.expander {
+  width: calc(var(--nav-width) + 9.25rem) !important;
+}

@@ -21,16 +21,16 @@ export class LoginPageComponent {
   public formLogin: FormGroup = new FormGroup({});
 
 
-  public user: User = {
-    password: '',
-    user: ''
-  };
+  public user: User;
 
   constructor(
     private _spinner: SpinnerService,
     private _global: GlobalsService,
     private _router:Router){
-
+      this.user = {
+        password: '',
+        user: ''
+      };
   }
 
   ngOnInit(): void {

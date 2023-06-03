@@ -3,15 +3,15 @@ import { RouterModule, Routes } from '@angular/router';
 
 const routes: Routes = [
   {
-    path: 'hotel',
+    path: 'hoteles',
     loadChildren: () => import('@modules/hotel/hotel.module').then(m => m.HotelModule)
   },
   {
-    path: 'rooms',
+    path: 'room',
     loadChildren: () => import('@modules/rooms/rooms.module').then(m => m.RoomsModule)
   },
   {
-    path: 'reservations',
+    path: 'reservaciones',
     loadChildren: () => import('@modules/reservations/reservations.module').then(m => m.ReservationsModule)
   },
   {
