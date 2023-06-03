@@ -180,6 +180,19 @@ a:hover {
   background: #ccc;
 }
 
+.has-error {
+  color: #dd3232;
+  border-bottom: 2px solid #dd3232 !important;
+}
+
+.has-error .i em {
+  color: #dd3232;
+}
+
+.has-error div input {
+  color: #dd3232;
+}
+
 @media screen and (max-width: 1050px) {
   .container {
     grid-gap: 5rem;

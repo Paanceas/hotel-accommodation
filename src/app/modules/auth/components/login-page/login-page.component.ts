@@ -7,6 +7,7 @@ import { SpinnerService } from 'src/app/services/spinner.service';
 
 import Swal from 'sweetalert2';
 import * as userSession from '../../../../data/user.json';
+import { FormControl, FormGroup, Validators } from '@angular/forms';
 
 @Component({
   selector: 'app-login-page',
@@ -15,12 +16,15 @@ import * as userSession from '../../../../data/user.json';
 })
 export class LoginPageComponent {
 
+  private util: Util = new Util();
+
+  public formLogin: FormGroup = new FormGroup({});
+
+
   public user: User = {
     password: '',
     user: ''
   };
-
-  private util: Util = new Util();
 
   constructor(
     private _spinner: SpinnerService,
@@ -32,6 +36,7 @@ export class LoginPageComponent {
   ngOnInit(): void {
     window.sessionStorage.clear();
     this._global.updateSession(false);
+    this.resetUser();
   }
 
   private resetUser() {
@@ -39,15 +44,24 @@ export class LoginPageComponent {
       password: '',
       user: ''
     };
+    this.formLogin = new FormGroup(
+      {
+        user: new FormControl('',[
+          Validators.required
+        ]),
+        password: new FormControl('', [
+          Validators.required
+        ])
+      }
+    );
   }
 
-  loadSesion() {
+  loadSession() {
+    this.user = this.formLogin.value;
     if(this.util.validObject(this.user)){
       this._spinner.loader(true);
       setTimeout(() => {
         const response:any = userSession.default;
-        console.log("🚀 ~ file: login-page.component.ts:52 ~ LoginPageComponent ~ setTimeout ~ this.util.encoding(this.user.password):", this.util.encoding(this.user.password))
-        console.log("🚀 ~ file: login-page.component.ts:53 ~ LoginPageComponent ~ setTimeout ~ response.password:", response.password)
         if(
           this.user.user === response.usuario &&
           this.util.encoding(this.user.password) === response.password

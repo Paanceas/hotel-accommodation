@@ -5,26 +5,26 @@
       <img src="assets/img/road.svg" alt="">
     </div>
     <div class="login-content animate__animated animate__fadeInDown">
-      <form #loginForm="ngForm">
+      <form [formGroup]="formLogin">
         <img class="avatar" src="assets/img/logo.png" alt="">
         <h2>Bienvenido</h2>
-        <div class="input-div" [ngClass]="{'error': userControl.touched && userControl.errors?.['required']}">
+        <div class="input-div" [ngClass]="{'has-error': formLogin.get('user')?.touched && formLogin.get('user')?.errors?.['required']}">
           <div class="i">
             <em class="bx bx-user"></em>
           </div>
           <div>
-            <input type="text" name="user" [(ngModel)]="user.user" #userControl="ngModel" placeholder="Usuario" required>
+            <input type="text" name="user" formControlName="user" placeholder="Usuario" required>
           </div>
         </div>
-        <div class="input-div" [ngClass]="{'error': passwordControl.touched && passwordControl.errors?.['required']}">
+        <div class="input-div" [ngClass]="{'has-error': formLogin.get('password')?.touched && formLogin.get('password')?.errors?.['required']}">
           <div class="i">
             <em class="bx bx-lock"></em>
           </div>
           <div>
-            <input type="password" name="password" [(ngModel)]="user.password"  #passwordControl="ngModel" placeholder="Contraseña" required>
+            <input type="password" name="password" formControlName="password"  placeholder="Contraseña" required>
           </div>
         </div>
-        <button class="btn" [disabled]="loginForm.invalid" (click)="loadSesion()">ingresar</button>
+        <button class="btn" [disabled]="formLogin.invalid" (click)="loadSession()">ingresar</button>
       </form>
     </div>
   </div>
