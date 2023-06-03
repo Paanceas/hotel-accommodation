@@ -6,20 +6,6 @@ import { SpinnerService } from './services/spinner.service';
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.css']
 })
-export class AppComponent implements OnInit{
+export class AppComponent {
   title = 'hotel-accommodation';
-
-  constructor( private sv:SpinnerService){
-
-  }
-
-  ngOnInit(): void {
-    this.sv.loader(true);
-    setTimeout(() => {
-      this.sv.loader(false);
-    }, 3000);
-  }
-
-
-
 }

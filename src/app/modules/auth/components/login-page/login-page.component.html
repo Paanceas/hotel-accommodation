@@ -1,0 +1,31 @@
+<div class="login">
+  <img class="wave" src="assets/img/wave.svg" alt="">
+  <div class="container ">
+    <div class="img animate__animated animate__fadeInLeft">
+      <img src="assets/img/road.svg" alt="">
+    </div>
+    <div class="login-content animate__animated animate__fadeInDown">
+      <form #loginForm="ngForm">
+        <img class="avatar" src="assets/img/logo.png" alt="">
+        <h2>Bienvenido</h2>
+        <div class="input-div" [ngClass]="{'error': userControl.touched && userControl.errors?.['required']}">
+          <div class="i">
+            <em class="bx bx-user"></em>
+          </div>
+          <div>
+            <input type="text" name="user" [(ngModel)]="user.user" #userControl="ngModel" placeholder="Usuario" required>
+          </div>
+        </div>
+        <div class="input-div" [ngClass]="{'error': passwordControl.touched && passwordControl.errors?.['required']}">
+          <div class="i">
+            <em class="bx bx-lock"></em>
+          </div>
+          <div>
+            <input type="password" name="password" [(ngModel)]="user.password"  #passwordControl="ngModel" placeholder="Contraseña" required>
+          </div>
+        </div>
+        <button class="btn" [disabled]="loginForm.invalid" (click)="loadSesion()">ingresar</button>
+      </form>
+    </div>
+  </div>
+</div>
