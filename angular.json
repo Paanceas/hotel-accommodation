@@ -25,7 +25,11 @@
               "node_modules/ngx-spinner/animations/ball-pulse.css",
               "node_modules/sweetalert2/src/sweetalert2.scss"
             ],
-            "scripts": ["./node_modules/bootstrap/dist/js/bootstrap.min.js"]
+            "scripts": ["./node_modules/bootstrap/dist/js/bootstrap.min.js"],
+            "allowedCommonJsDependencies": [
+              "js-sha256",
+              "sweetalert2"
+            ]
           },
           "configurations": {
             "production": {
