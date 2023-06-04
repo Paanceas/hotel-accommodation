@@ -35,9 +35,8 @@
           </td>
           <td>
             <div class="btn-group" role="group" aria-label="Basic outlined example">
-              <button type="button" alt="detalles" title="detalles" class="btn btn-outline-primary"><i class="fas fa-eye"></i></button>
               <button (click)="goToEditHotel(item.id)" type="button" alt="editar" title="editar" class="btn btn-outline-primary"><i class="fas fa-pencil"></i></button>
-              <button type="button" alt="eliminar" title="eliminar" appRoll class="btn btn-outline-primary"><i class="fas fa-trash-alt"></i></button>
+              <button (click)="deleteHotel(item)" type="button" alt="eliminar" title="eliminar" appRoll class="btn btn-outline-primary"><i class="fas fa-trash-alt"></i></button>
             </div>
           </td>
         </tr>

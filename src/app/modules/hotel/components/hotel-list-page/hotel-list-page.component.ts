@@ -4,7 +4,7 @@ import * as hotels from '../../../../data/hoteles.json';
 import Swal from 'sweetalert2';
 import { Util } from 'src/app/common/util';
 import { Router } from '@angular/router';
-import { Hotel, HotelView } from '@modules/hotel/models/hotel';
+import { Hotel, HotelView } from '@modules/hotel/models/Hotel';
 
 @Component({
   selector: 'app-hotel-list-page',
@@ -60,5 +60,21 @@ export class HotelListPageComponent implements OnInit {
     this._router.navigate(["/dashboard/hoteles/crear"]);
   }
 
+  deleteHotel(hotel:Hotel) {
+    Swal.fire({
+      title: `¿Estas Seguro de eliminar el Hotel ${hotel.name}?`,
+      text: "¡No podrás revertir esto!",
+      icon: 'warning',
+      showCancelButton: true,
+      confirmButtonColor: '#3085d6',
+      cancelButtonColor: '#d33',
+      cancelButtonText: 'Cancelar',
+      confirmButtonText: `Sí eliminar`
+    }).then((result) => {
+      if (result.isConfirmed) {
+        console.log(result);
+      }
+    })
+  }
 
 }

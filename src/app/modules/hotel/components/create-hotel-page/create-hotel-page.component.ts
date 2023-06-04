@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { ActivatedRoute, Router } from '@angular/router';
-import { Hotel, Room } from '@modules/hotel/models/hotel';
+import { Hotel, Room } from '@modules/hotel/models/Hotel';
 import { Util } from 'src/app/common/util';
 
 @Component({
