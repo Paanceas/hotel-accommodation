@@ -1,0 +1,47 @@
+<div class="d-flex justify-content-between mb-2">
+  <h1 class="h3 mb-2 text-gray-800">Consulta de Hoteles</h1>
+  <a class="btn btn-secondary" [routerLink]="['/dashboard/hoteles/crear']">
+    <i class="fa fa-plus-circle mx-1" aria-hidden="true"></i>
+    <span>Nuevo Hotel</span>
+  </a>
+</div>
+<div class="card shadow mb-4">
+  <div class="card-body">
+    <table class="table">
+      <caption>Total hoteles: {{HotelList.length}} </caption>
+      <thead class="table-dark">
+        <tr>
+          <th scope="col"># id</th>
+          <th scope="col">Nombre Hotel</th>
+          <th scope="col">Habitaciones Disponibles</th>
+          <th scope="col">Habitaciones Reservadas</th>
+          <th scope="col">Total Habitaciones</th>
+          <th scope="col">Estado</th>
+          <th scope="col"></th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let item of HotelList">
+          <th scope="row">{{item.id}}</th>
+          <td>{{item.name}}</td>
+          <td>{{item.totalAvailableRooms}}</td>
+          <td>{{item.totalReservedRooms}}</td>
+          <td>{{item.totalRooms}}</td>
+          <td>
+            <label class="switch">
+              <input type="checkbox" [(ngModel)]="item.status" (ngModelChange)="changeStatus(item)">
+              <span class="slider round"></span>
+            </label>
+          </td>
+          <td>
+            <div class="btn-group" role="group" aria-label="Basic outlined example">
+              <button type="button" alt="detalles" title="detalles" class="btn btn-outline-primary"><i class="fas fa-eye"></i></button>
+              <button (click)="goToEditHotel(item.id)" type="button" alt="editar" title="editar" class="btn btn-outline-primary"><i class="fas fa-pencil"></i></button>
+              <button type="button" alt="eliminar" title="eliminar" appRoll class="btn btn-outline-primary"><i class="fas fa-trash-alt"></i></button>
+            </div>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>

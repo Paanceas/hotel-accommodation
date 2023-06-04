@@ -1,0 +1,402 @@
+[
+  {
+    "id": 1,
+    "status": true,
+    "name": "Hotel A",
+    "description": "Lorem ipsum dolor sit amet.",
+    "images": [
+      "https://example.com/hotelA/image1.jpg",
+      "https://example.com/hotelA/image2.jpg",
+      "https://example.com/hotelA/image3.jpg"
+    ],
+    "rooms": [
+      {
+        "id": 1,
+        "name": "Room 101",
+        "price": 100,
+        "type": "Standard",
+        "tax": 10,
+        "status": true,
+        "reserved": true
+      },
+      {
+        "id": 2,
+        "name": "Room 102",
+        "price": 120,
+        "type": "Standard",
+        "tax": 10,
+        "status": true,
+        "reserved": true
+      },
+      {
+        "id": 3,
+        "name": "Room 103",
+        "price": 150,
+        "type": "Deluxe",
+        "tax": 10,
+        "status": true,
+        "reserved": false
+      }
+    ]
+  },
+  {
+    "id": 2,
+    "status": true,
+    "name": "Hotel B",
+    "description": "Lorem ipsum dolor sit amet.",
+    "images": [
+      "https://example.com/hotelB/image1.jpg",
+      "https://example.com/hotelB/image2.jpg",
+      "https://example.com/hotelB/image3.jpg"
+    ],
+    "rooms": [
+      {
+        "id": 4,
+        "name": "Room 201",
+        "price": 110,
+        "type": "Standard",
+        "tax": 10,
+        "status": true,
+        "reserved": false
+      },
+      {
+        "id": 5,
+        "name": "Room 202",
+        "price": 130,
+        "type": "Standard",
+        "tax": 10,
+        "status": true,
+        "reserved": false
+      },
+      {
+        "id": 6,
+        "name": "Room 203",
+        "price": 160,
+        "type": "Deluxe",
+        "tax": 10,
+        "status": true,
+        "reserved": true
+      }
+    ]
+  },
+  {
+    "id": 3,
+    "status": true,
+    "name": "Hotel C",
+    "description": "Lorem ipsum dolor sit amet.",
+    "images": [
+      "https://example.com/hotelC/image1.jpg",
+      "https://example.com/hotelC/image2.jpg",
+      "https://example.com/hotelC/image3.jpg"
+    ],
+    "rooms": [
+      {
+        "id": 7,
+        "name": "Room 301",
+        "price": 120,
+        "type": "Standard",
+        "tax": 10,
+        "status": true,
+        "reserved": true
+      },
+      {
+        "id": 8,
+        "name": "Room 302",
+        "price": 140,
+        "type": "Standard",
+        "tax": 10,
+        "status": true,
+        "reserved": false
+      },
+      {
+        "id": 9,
+        "name": "Room 303",
+        "price": 170,
+        "type": "Deluxe",
+        "tax": 10,
+        "status": true,
+        "reserved": true
+      }
+    ]
+  },
+  {
+    "id": 4,
+    "status": true,
+    "name": "Hotel D",
+    "description": "Lorem ipsum dolor sit amet.",
+    "images": [
+      "https://example.com/hotelD/image1.jpg",
+      "https://example.com/hotelD/image2.jpg",
+      "https://example.com/hotelD/image3.jpg"
+    ],
+    "rooms": [
+      {
+        "id": 10,
+        "name": "Room 401",
+        "price": 130,
+        "type": "Standard",
+        "tax": 10,
+        "status": true,
+        "reserved": false
+      },
+      {
+        "id": 11,
+        "name": "Room 402",
+        "price": 150,
+        "type": "Standard",
+        "tax": 10,
+        "status": true,
+        "reserved": false
+      },
+      {
+        "id": 12,
+        "name": "Room 403",
+        "price": 180,
+        "type": "Deluxe",
+        "tax": 10,
+        "status": true,
+        "reserved": false
+      }
+    ]
+  },
+  {
+    "id": 5,
+    "status": true,
+    "name": "Hotel E",
+    "description": "Lorem ipsum dolor sit amet.",
+    "images": [
+      "https://example.com/hotelE/image1.jpg",
+      "https://example.com/hotelE/image2.jpg",
+      "https://example.com/hotelE/image3.jpg"
+    ],
+    "rooms": [
+      {
+        "id": 13,
+        "name": "Room 501",
+        "price": 140,
+        "type": "Standard",
+        "tax": 10,
+        "status": true,
+        "reserved": false
+      },
+      {
+        "id": 14,
+        "name": "Room 502",
+        "price": 160,
+        "type": "Standard",
+        "tax": 10,
+        "status": true,
+        "reserved": false
+      },
+      {
+        "id": 15,
+        "name": "Room 503",
+        "price": 190,
+        "type": "Deluxe",
+        "tax": 10,
+        "status": true,
+        "reserved": true
+      }
+    ]
+  },
+  {
+    "id": 6,
+    "status": true,
+    "name": "Hotel F",
+    "description": "Lorem ipsum dolor sit amet.",
+    "images": [
+      "https://example.com/hotelF/image1.jpg",
+      "https://example.com/hotelF/image2.jpg",
+      "https://example.com/hotelF/image3.jpg"
+    ],
+    "rooms": [
+      {
+        "id": 16,
+        "name": "Room 601",
+        "price": 150,
+        "type": "Standard",
+        "tax": 10,
+        "status": true,
+        "reserved": false
+      },
+      {
+        "id": 17,
+        "name": "Room 602",
+        "price": 170,
+        "type": "Standard",
+        "tax": 10,
+        "status": true,
+        "reserved": false
+      },
+      {
+        "id": 18,
+        "name": "Room 603",
+        "price": 200,
+        "type": "Deluxe",
+        "tax": 10,
+        "status": true,
+        "reserved": false
+      }
+    ]
+  },
+  {
+    "id": 7,
+    "status": true,
+    "name": "Hotel G",
+    "description": "Lorem ipsum dolor sit amet.",
+    "images": [
+      "https://example.com/hotelG/image1.jpg",
+      "https://example.com/hotelG/image2.jpg",
+      "https://example.com/hotelG/image3.jpg"
+    ],
+    "rooms": [
+      {
+        "id": 19,
+        "name": "Room 701",
+        "price": 160,
+        "type": "Standard",
+        "tax": 10,
+        "status": true,
+        "reserved": true
+      },
+      {
+        "id": 20,
+        "name": "Room 702",
+        "price": 180,
+        "type": "Standard",
+        "tax": 10,
+        "status": true,
+        "reserved": false
+      },
+      {
+        "id": 21,
+        "name": "Room 703",
+        "price": 210,
+        "type": "Deluxe",
+        "tax": 10,
+        "status": true,
+        "reserved": false
+      }
+    ]
+  },
+  {
+    "id": 8,
+    "status": true,
+    "name": "Hotel H",
+    "description": "Lorem ipsum dolor sit amet.",
+    "images": [
+      "https://example.com/hotelH/image1.jpg",
+      "https://example.com/hotelH/image2.jpg",
+      "https://example.com/hotelH/image3.jpg"
+    ],
+    "rooms": [
+      {
+        "id": 22,
+        "name": "Room 801",
+        "price": 170,
+        "type": "Standard",
+        "tax": 10,
+        "status": true,
+        "reserved": false
+      },
+      {
+        "id": 23,
+        "name": "Room 802",
+        "price": 190,
+        "type": "Standard",
+        "tax": 10,
+        "status": true,
+        "reserved": false
+      },
+      {
+        "id": 24,
+        "name": "Room 803",
+        "price": 220,
+        "type": "Deluxe",
+        "tax": 10,
+        "status": true,
+        "reserved": false
+      }
+    ]
+  },
+  {
+    "id": 9,
+    "status": false,
+    "name": "Hotel I",
+    "description": "Lorem ipsum dolor sit amet.",
+    "images": [
+      "https://example.com/hotelI/image1.jpg",
+      "https://example.com/hotelI/image2.jpg",
+      "https://example.com/hotelI/image3.jpg"
+    ],
+    "rooms": [
+      {
+        "id": 25,
+        "name": "Room 901",
+        "price": 180,
+        "type": "Standard",
+        "tax": 10,
+        "status": true,
+        "reserved": false
+      },
+      {
+        "id": 26,
+        "name": "Room 902",
+        "price": 200,
+        "type": "Standard",
+        "tax": 10,
+        "status": true,
+        "reserved": false
+      },
+      {
+        "id": 27,
+        "name": "Room 903",
+        "price": 230,
+        "type": "Deluxe",
+        "tax": 10,
+        "status": true,
+        "reserved": false
+      }
+    ]
+  },
+  {
+    "id": 10,
+    "status": true,
+    "name": "Hotel J",
+    "description": "Lorem ipsum dolor sit amet.",
+    "images": [
+      "https://example.com/hotelJ/image1.jpg",
+      "https://example.com/hotelJ/image2.jpg",
+      "https://example.com/hotelJ/image3.jpg"
+    ],
+    "rooms": [
+      {
+        "id": 28,
+        "name": "Room 1001",
+        "price": 190,
+        "type": "Standard",
+        "tax": 10,
+        "status": true,
+        "reserved": true
+      },
+      {
+        "id": 29,
+        "name": "Room 1002",
+        "price": 210,
+        "type": "Standard",
+        "tax": 10,
+        "status": true,
+        "reserved": true
+      },
+      {
+        "id": 30,
+        "name": "Room 1003",
+        "price": 240,
+        "type": "Deluxe",
+        "tax": 10,
+        "status": true,
+        "reserved": true
+      }
+    ]
+  }
+]

@@ -1,0 +1,33 @@
+import { Room } from "@modules/hotel/models/hotel";
+
+interface HotelReservation {
+  checkInDate: string; // Fecha de entrada al alojamiento (formato: aaaa-mm-dd)
+  checkOutDate: string; // Fecha de salida del alojamiento (formato: aaaa-mm-dd)
+  numberOfGuests: number; // Cantidad de personas que se alojarán
+  destinationCity: string; // Ciudad de destino
+  selectedRoom: Room; // Detalles de la habitación seleccionada
+  guestDetails: GuestDetails[]; // Arreglo de detalles de los huéspedes
+  isReservationConfirmed: boolean; // Bandera que indica si la reserva está confirmada
+}
+
+interface GuestDetails {
+  fullName: string; // Nombre completo del huésped
+  dateOfBirth: string; // Fecha de nacimiento del huésped (formato: aaaa-mm-dd)
+  gender: string; // Género del huésped
+  documentType: string; // Tipo de documento del huésped
+  documentNumber: string; // Número de documento del huésped
+  email: string; // Dirección de correo electrónico del huésped
+  contactNumber: string; // Número de teléfono de contacto del huésped
+  emergencyContact: EmergencyContact; // Contacto de emergencia
+}
+
+interface ReservationConfirmation {
+  reservationId: string; // ID de la reserva
+  guestName: string; // Nombre del huésped
+  email: string; // Dirección de correo electrónico del huésped
+}
+
+interface EmergencyContact {
+  fullName: string; // Nombre completo del contacto de emergencia
+  phoneNumber: string; // Teléfono completo del contacto de emergencia
+}

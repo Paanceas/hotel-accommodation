@@ -1,0 +1,86 @@
+<div class="d-flex justify-content-between mb-2">
+  <h1 class="h3 mb-2 text-gray-800">{{action}} de Hotel</h1>
+  <a class="btn btn-secondary" [routerLink]="['/dashboard/hoteles']">
+    <i class="fa fa-circle-left mx-1" aria-hidden="true"></i>
+    <span>volver</span>
+  </a>
+</div>
+<div class="card shadow mb-4">
+  <div class="card-body">
+    <form class="d-flex flex-column gap-2" [formGroup]="hotelForm">
+      <div class="form-group">
+        <label for="hotelName">Nombre Hotel</label>
+        <input type="text" class="form-control" id="hotelName" formControlName="name">
+      </div>
+      <div class="form-group">
+        <label for="hotelDescription">Descripción Hotel</label>
+        <textarea class="form-control" id="hotelDescription" formControlName="description"></textarea>
+      </div>
+      <div class="form-group">
+          <label for="hotelStatus">Estado Hotel</label>
+          <label class="mx-3 switch">
+            <input type="checkbox" id="hotelStatus" formControlName="status">
+            <span class="slider round"></span>
+          </label>
+      </div>
+    </form>
+      <div class="form-group col">
+        <hr>
+        <div class="d-flex justify-content-between">
+          <label>Habitaciones</label>
+          <a (click)="addRoom()" class="btn btn-primary btn-icon-split btn-sm">
+            <span class="icon text-white-50">
+                <i class="fas fa-plus"></i>
+            </span>
+            <span class="text">Agregar habitación</span>
+          </a>
+        </div>
+        <table class="table">
+          <thead class="thead-light">
+            <tr>
+              <th scope="col">#</th>
+              <th scope="col">Nombre Habitaciones</th>
+              <th scope="col">Costo base</th>
+              <th scope="col">Impuestos</th>
+              <th scope="col">Tipo Habitación</th>
+              <th scope="col">Estado</th>
+              <th scope="col"></th>
+            </tr>
+          </thead>
+          <tbody>
+              <tr *ngFor="let room of rooms; index as key">
+                <th scope="row"> {{room.id}} </th>
+                <td>
+                  <input type="text" class="form-control" id="name{{key}}" [(ngModel)]="room.name" name="name{{key}}">
+                </td>
+                <td>
+                  <input type="number" class="form-control" id="price{{key}}" [(ngModel)]="room.price" name="price{{key}}">
+                </td>
+                <td>
+                  <input type="number" class="form-control" id="tax{{key}}" [(ngModel)]="room.tax" name="tax{{key}}">
+                </td>
+                <td>
+                  <select class="form-select" [(ngModel)]="room.type">
+                    <option value="Standard">Standard</option>
+                    <option value="Deluxe">Deluxe</option>
+                  </select>
+                </td>
+                <td>
+                  <label class="switch">
+                    <input type="checkbox" id="status" name="status"  [(ngModel)]="room.status">
+                    <span class="slider round"></span>
+                  </label>
+                </td>
+                <td>
+                  <a (click)="removeRoom(key)" class="btn btn-danger btn-circle btn-sm">
+                    <i class="fas fa-trash"></i>
+                  </a>
+                </td>
+              </tr>
+          </tbody>
+          </table>
+      </div>
+      <button (click)="submitForm()" [disabled]="hotelForm.invalid || rooms.length===0" class="btn btn-success">Realizar la {{action}} del Hotel</button>
+
+  </div>
+</div>

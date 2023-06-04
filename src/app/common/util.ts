@@ -1,6 +1,5 @@
-import Swal from 'sweetalert2';
+import Swal, { SweetAlertIcon } from 'sweetalert2';
 import { sha256 } from 'js-sha256';
-
 export class Util {
 
   delObj(nom: string): void {
@@ -47,6 +46,39 @@ export class Util {
 
   encoding(value:string):string{
     return sha256(value);
+  }
+
+  getInfoLocal(name:string){
+    const hotelsString = localStorage.getItem(name);
+    if (hotelsString) {
+      return JSON.parse(hotelsString);
+    }
+    return null;
+  }
+
+  saveInfoLocal(name:string, data:object|[]){
+    const hotelsString = JSON.stringify(data);
+    localStorage.setItem(name, hotelsString);
+  }
+
+  msnShow(msn:string, type?:SweetAlertIcon){
+    const Toast = Swal.mixin({
+      toast: true,
+      position: 'top-end',
+      showConfirmButton: false,
+      timer: 2000,
+      timerProgressBar: true,
+      didOpen: (toast) => {
+        toast.addEventListener('mouseenter', Swal.stopTimer)
+        toast.addEventListener('mouseleave', Swal.resumeTimer)
+      }
+    })
+
+    Toast.fire({
+      icon: type || 'success',
+      title: `${msn}`
+    })
+
   }
 
 }
