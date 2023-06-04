@@ -2,9 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { Hotel } from '@modules/hotel/models/Hotel';
-import {
-  HotelReservation,
-} from '@modules/reservations/models/Reservation';
+import { HotelReservation } from '@modules/reservations/models/Reservation';
 import { Util } from 'src/app/common/util';
 import { SpinnerService } from 'src/app/services/spinner.service';
 
