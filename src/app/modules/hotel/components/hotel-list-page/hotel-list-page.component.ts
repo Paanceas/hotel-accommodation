@@ -1,6 +1,5 @@
 import { Component, OnInit } from '@angular/core';
 
-import * as hotels from '../../../../data/hoteles.json';
 import Swal from 'sweetalert2';
 import { Util } from 'src/app/common/util';
 import { Router } from '@angular/router';
@@ -20,14 +19,7 @@ export class HotelListPageComponent implements OnInit {
   constructor(private _router:Router) { }
 
   ngOnInit(): void {
-    this.HotelList = this.calculateStats(this.saveDataHotels());
-  }
-
-  saveDataHotels(): Hotel[] {
-    if(!this.util.getInfoLocal('hotelList')){
-      this.util.saveInfoLocal('hotelList', hotels.default);
-    }
-    return this.util.getInfoLocal('hotelList');
+    this.HotelList = this.calculateStats(this.util.setHotelList());
   }
 
   changeStatus(item: Hotel) {

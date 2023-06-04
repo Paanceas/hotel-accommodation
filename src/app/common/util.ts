@@ -1,5 +1,9 @@
 import Swal, { SweetAlertIcon } from 'sweetalert2';
 import { sha256 } from 'js-sha256';
+
+import * as hotels from '../data/hoteles.json';
+
+
 export class Util {
 
   delObj(nom: string): void {
@@ -46,6 +50,13 @@ export class Util {
 
   encoding(value:string):string{
     return sha256(value);
+  }
+
+  setHotelList(){
+    if(!this.getInfoLocal('hotelList')){
+      this.saveInfoLocal('hotelList', hotels.default);
+    }
+    return this.getInfoLocal('hotelList');
   }
 
   getInfoLocal(name:string){
