@@ -1,3 +1,75 @@
 <div class="body">
   <app-navbar></app-navbar>
+
+  <! ========================
+Syed Sahar Ali Raza
+========================  !>
+  <div id="generic_price_table">
+    <section>
+      <div class="container">
+        <div class="row">
+          <div class="col-md-12 mt-4">
+            <!--PRICE HEADING START-->
+            <div class="price-heading clearfix">
+              <h1>Habitaciones disponibles del Hotel <strong> {{hotel?.name}}</strong></h1>
+            </div>
+            <!--//PRICE HEADING END-->
+          </div>
+        </div>
+      </div>
+      <div class="container">
+        <!--BLOCK ROW START-->
+        <div class="row">
+          <div class="col-md-4" *ngFor="let room of hotel?.rooms">
+            <!--PRICE CONTENT START-->
+            <div class="generic_content clearfix">
+              <!--HEAD PRICE DETAIL START-->
+              <div class="generic_head_price clearfix">
+                <!--HEAD CONTENT START-->
+                <div class="generic_head_content clearfix">
+                  <!--HEAD START-->
+                  <div class="head_bg"></div>
+                  <div class="head">
+                    <span>{{room.type}}</span>
+                  </div>
+                  <!--//HEAD END-->
+                </div>
+                <!--//HEAD CONTENT END-->
+
+                <!--PRICE START-->
+                <div class="generic_price_tag clearfix">
+                  <span class="price">
+                    <span class="sign">$</span>
+                    <span class="currency">{{room.price}}</span>
+                  </span>
+                </div>
+                <!--//PRICE END-->
+              </div>
+              <!--//HEAD PRICE DETAIL END-->
+
+              <!--FEATURE LIST START-->
+              <div class="generic_feature_list">
+                <ul>
+                  <li><span>2GB</span> Bandwidth</li>
+                  <li><span>150GB</span> Storage</li>
+                  <li><span>12</span> Accounts</li>
+                  <li><span>7</span> Host Domain</li>
+                  <li><span>24/7</span> Support</li>
+                </ul>
+              </div>
+              <!--//FEATURE LIST END-->
+
+              <!--BUTTON START-->
+              <div class="generic_price_btn clearfix">
+                <a class="" href="">Sign up</a>
+              </div>
+              <!--//BUTTON END-->
+            </div>
+            <!--//PRICE CONTENT END-->
+          </div>
+        </div>
+        <!--//BLOCK ROW END-->
+      </div>
+    </section>
+  </div>
 </div>

@@ -59,7 +59,6 @@ export class CreateHotelPageComponent implements OnInit {
   }
 
   addRoom() {
-    console.log('this.rooms[this.rooms.length]?.id+1  :>> ', this.rooms[this.rooms.length]?.id + 1);
     this.rooms = [
       ...this.rooms,
       {
