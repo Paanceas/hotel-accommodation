@@ -2,7 +2,6 @@ import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Params, Router } from '@angular/router';
 import { Hotel, Room } from '@modules/hotel/models/Hotel';
 import { HotelReservation } from '@modules/reservations/models/Reservation';
-import { v4 as uuidv4 } from 'uuid';
 import { Util } from 'src/app/common/util';
 
 @Component({
@@ -62,8 +61,7 @@ export class HotelDetailsComponent implements OnInit {
     this.util.msnShow(`Se asigno la habitación ${room.name} correctamente`, 'info')
     this.updateReservation({
       selectedRoom:room,
-      isReservationConfirmed: false,
-      uuid: uuidv4()
+      isReservationConfirmed: false
     });
     this._router.navigate(["/reservation"]);
   }

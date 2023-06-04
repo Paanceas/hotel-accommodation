@@ -23,12 +23,6 @@ export interface GuestDetails {
   emergencyContact: EmergencyContact; // Contacto de emergencia
 }
 
-export interface ReservationConfirmation {
-  reservationId: string; // ID de la reserva
-  guestName: string; // Nombre del huésped
-  email: string; // Dirección de correo electrónico del huésped
-}
-
 export interface EmergencyContact {
   fullName: string; // Nombre completo del contacto de emergencia
   phoneNumber: string; // Teléfono completo del contacto de emergencia

@@ -1,9 +1,10 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
-import { Hotel } from '@modules/hotel/models/Hotel';
+import { Hotel, Room } from '@modules/hotel/models/Hotel';
 import { HotelReservation } from '@modules/reservations/models/Reservation';
 import { Util } from 'src/app/common/util';
 import { SpinnerService } from 'src/app/services/spinner.service';
+import { v4 as uuidv4 } from 'uuid';
 
 @Component({
   selector: 'app-hotels-view',
@@ -25,7 +26,12 @@ export class HotelsViewComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    this.HotelList = this.util.setHotelList().filter((h:Hotel) => h.status);
+    this.HotelList = this.util.setHotelList().filter((hotel: Hotel) => {
+      // Verificar si el hotel tiene al menos una habitación con status=true y reserved=false
+      const hasValidRoom: boolean = hotel.rooms.some((room: Room) => room.status && !room.reserved);
+      // Retornar true solo si el status del hotel es true y tiene al menos una habitación válida
+      return hotel.status && hasValidRoom;
+    });
     this.util.delInfoLocal('reservationInfo');
     this.createHotelForm();
   }
@@ -35,6 +41,7 @@ export class HotelsViewComponent implements OnInit {
       this._spinner.loader(true);
       setTimeout(() => {
         this.reservation = {
+          uuid: uuidv4(),
           ...this.reservationForm.value
         }
         this.util.msnShow("Búsqueda exitosa");

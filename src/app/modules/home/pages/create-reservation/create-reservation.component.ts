@@ -1,8 +1,10 @@
 import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormBuilder, Validators } from '@angular/forms';
+import { Router } from '@angular/router';
 import { Hotel, Room } from '@modules/hotel/models/Hotel';
 import { GuestDetails, HotelReservation } from '@modules/reservations/models/Reservation';
 import { Util } from 'src/app/common/util';
+import { SpinnerService } from 'src/app/services/spinner.service';
 
 @Component({
   selector: 'app-create-reservation',
@@ -15,8 +17,9 @@ export class CreateReservationComponent implements OnInit {
   private util: Util = new Util();
 
   public reservationInfo:HotelReservation | null = null;
+  public reservationList:HotelReservation[]= [];
   public hotel:Hotel | null = null;
-  constructor(private formBuilder: FormBuilder) { }
+  constructor(private formBuilder: FormBuilder,private _spinner: SpinnerService, private _router:Router) { }
 
   ngOnInit(): void {
     this.getHotelById();
@@ -24,6 +27,7 @@ export class CreateReservationComponent implements OnInit {
   }
 
   private getHotelById(){
+      this.reservationList = this.util.getInfoLocal('reservationsList');
       this.reservationInfo = this.util.getInfoLocal('reservationInfo');
       const hotelList:any[] = this.util.getInfoLocal('hotelList');
       this.hotel = hotelList.find((h: Hotel) => h.id === this.reservationInfo?.selectedIdHotel);
@@ -47,9 +51,30 @@ export class CreateReservationComponent implements OnInit {
 
   onSubmit(): void {
     if (this.guestForm.valid) {
-      const guestDetails: GuestDetails = this.guestForm.value;
-      console.log(guestDetails);
+      this._spinner.loader(true);
+      setTimeout(() => {
+        const reservation = {
+          ...this.reservationInfo,
+          guestDetails: {...this.guestForm.value},
+          isReservationConfirmed: true
+        };
+        this.createReservation(reservation);
+      }, 1000);
+
       // Realiza acciones adicionales con los datos del formulario
+    }else{
+      this.util.msnShow(`Revise la información suministrada`, 'warning');
     }
   }
+
+  private createReservation(reservation:any){
+    this._spinner.loader(false);
+    this.util.msnShow(`Reserva ${reservation.uuid} creada exitosamente`);
+    this._router.navigate(["/"]);
+    this.reservationInfo = reservation;
+    this.reservationList = [...this.reservationList, reservation];
+    this.util.saveInfoLocal('reservationsList', this.reservationList);
+    this.reservationList = this.util.getInfoLocal('reservationsList');
+  }
+
 }

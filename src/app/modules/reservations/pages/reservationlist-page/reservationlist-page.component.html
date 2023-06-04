@@ -26,13 +26,13 @@
           <td>{{item.checkOutDate}}</td>
           <td>{{item.destinationCity}}</td>
           <td>
-              <a class="btn btn-success btn-icon-split" *ngIf="!item.isReservationConfirmed">
+              <a class="btn btn-success btn-icon-split" *ngIf="item.isReservationConfirmed">
                   <span class="icon text-white-50">
                       <i class="mx-1 fas fa-check"></i>
                   </span>
                   <span class="text">Confirmada</span>
               </a>
-              <a class="btn btn-danger btn-icon-split" *ngIf="item.isReservationConfirmed">
+              <a class="btn btn-danger btn-icon-split" *ngIf="!item.isReservationConfirmed">
                 <span class="icon text-white-50">
                     <i class="mx-1 fas fa-close"></i>
                 </span>

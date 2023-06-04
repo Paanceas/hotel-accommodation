@@ -13,7 +13,7 @@
   --white-color: #FFF;
   --silver-color: #f7faff;
   /*===== Fuente y tipografia =====*/
-  --body-font: 'Poppins', sans-serif;
+  --body-font: 'Roboto', sans-serif;
   --normal-font-size: 1rem;
   --small-font-size: .875rem;
   /*===== z index =====*/
@@ -28,7 +28,7 @@
 }
 
 h1, h2, h3, h4, h5, h6 {
-  --body-font: 'Roboto', sans-serif;
+  --body-font: 'Poppins', sans-serif;
 }
 
 body {

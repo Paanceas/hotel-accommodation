@@ -1,6 +1,6 @@
 [
   {
-    "uuid": "1",
+    "uuid": "1c09078b-27b3-477d-b4d3-5dddd4a5bd7a",
     "checkInDate": "2023-06-10",
     "checkOutDate": "2023-06-15",
     "numberOfGuests": 2,
@@ -31,7 +31,7 @@
     "isReservationConfirmed": true
   },
   {
-    "uuid": "2",
+    "uuid": "2c09078b-27b3-477d-b4d3-5dddd4a5bd7a",
     "checkInDate": "2023-07-20",
     "checkOutDate": "2023-07-25",
     "numberOfGuests": 1,
@@ -62,7 +62,7 @@
     "isReservationConfirmed": true
   },
   {
-    "uuid": "3",
+    "uuid": "3c09078b-27b3-477d-b4d3-5dddd4a5bd7a",
     "checkInDate": "2023-08-15",
     "checkOutDate": "2023-08-20",
     "numberOfGuests": 2,
@@ -93,7 +93,7 @@
     "isReservationConfirmed": false
   },
   {
-    "uuid": "4",
+    "uuid": "4c09078b-27b3-477d-b4d3-5dddd4a5bd7a",
     "checkInDate": "2023-09-05",
     "checkOutDate": "2023-09-10",
     "numberOfGuests": 1,
@@ -124,7 +124,7 @@
     "isReservationConfirmed": true
   },
   {
-    "uuid": "5",
+    "uuid": "55c09078b-27b3-477d-b4d3-5dddd4a5bd7a",
     "checkInDate": "2023-10-20",
     "checkOutDate": "2023-10-25",
     "numberOfGuests": 2,
@@ -155,7 +155,7 @@
     "isReservationConfirmed": true
   },
   {
-    "uuid": "6",
+    "uuid": "65c09078b-27b3-477d-b4d3-5dddd4a5bd7a",
     "checkInDate": "2023-11-15",
     "checkOutDate": "2023-11-20",
     "numberOfGuests": 1,
@@ -186,7 +186,7 @@
     "isReservationConfirmed": true
   },
   {
-    "uuid": "7",
+    "uuid": "75c09078b-27b3-477d-b4d3-5dddd4a5bd7a",
     "checkInDate": "2023-12-10",
     "checkOutDate": "2023-12-15",
     "numberOfGuests": 2,
@@ -217,7 +217,7 @@
     "isReservationConfirmed": false
   },
   {
-    "uuid": "8",
+    "uuid": "85c09078b-27b3-477d-b4d3-5dddd4a5bd7a",
     "checkInDate": "2024-01-20",
     "checkOutDate": "2024-01-25",
     "numberOfGuests": 1,
@@ -248,7 +248,7 @@
     "isReservationConfirmed": true
   },
   {
-    "uuid": "9",
+    "uuid": "95c09078b-27b3-477d-b4d3-5dddd4a5bd7a",
     "checkInDate": "2024-02-15",
     "checkOutDate": "2024-02-20",
     "numberOfGuests": 2,
@@ -279,7 +279,7 @@
     "isReservationConfirmed": true
   },
   {
-    "uuid": "10",
+    "uuid": "105c09078b-27b3-477d-b4d3-5dddd4a5bd7a",
     "checkInDate": "2024-03-10",
     "checkOutDate": "2024-03-15",
     "numberOfGuests": 1,
