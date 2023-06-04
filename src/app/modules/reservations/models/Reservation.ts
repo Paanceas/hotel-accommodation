@@ -1,12 +1,14 @@
-import { Room } from "@modules/hotel/models/hotel";
+import { Room } from "@modules/hotel/models/Hotel";
 
 interface HotelReservation {
+  uuid:string,
   checkInDate: string; // Fecha de entrada al alojamiento (formato: aaaa-mm-dd)
   checkOutDate: string; // Fecha de salida del alojamiento (formato: aaaa-mm-dd)
   numberOfGuests: number; // Cantidad de personas que se alojarán
   destinationCity: string; // Ciudad de destino
+  selectedIdHotel: number;
   selectedRoom: Room; // Detalles de la habitación seleccionada
-  guestDetails: GuestDetails[]; // Arreglo de detalles de los huéspedes
+  guestDetails: GuestDetails; // Arreglo de detalles de los huéspedes
   isReservationConfirmed: boolean; // Bandera que indica si la reserva está confirmada
 }
 

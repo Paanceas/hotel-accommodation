@@ -7,10 +7,6 @@ const routes: Routes = [
     loadChildren: () => import('@modules/hotel/hotel.module').then(m => m.HotelModule)
   },
   {
-    path: 'room',
-    loadChildren: () => import('@modules/rooms/rooms.module').then(m => m.RoomsModule)
-  },
-  {
     path: 'reservaciones',
     loadChildren: () => import('@modules/reservations/reservations.module').then(m => m.ReservationsModule)
   },

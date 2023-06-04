@@ -1,0 +1,312 @@
+[
+  {
+    "uuid": "1",
+    "checkInDate": "2023-06-10",
+    "checkOutDate": "2023-06-15",
+    "numberOfGuests": 2,
+    "destinationCity": "Barcelona",
+    "selectedIdHotel": 4,
+    "selectedRoom": {
+      "id": 4,
+      "name": "Habitación 404",
+      "price": 120,
+      "type": "Deluxe",
+      "tax": 12,
+      "status": true,
+      "reserved": true
+    },
+    "guestDetails": {
+      "fullName": "María Pérez",
+      "dateOfBirth": "1990-05-15",
+      "gender": "Femenino",
+      "documentType": "DNI",
+      "documentNumber": "12345678",
+      "email": "maria@example.com",
+      "contactNumber": "1234567890",
+      "emergencyContact": {
+        "fullName": "Juan Gómez",
+        "phoneNumber": "9876543210"
+      }
+    },
+    "isReservationConfirmed": true
+  },
+  {
+    "uuid": "2",
+    "checkInDate": "2023-07-20",
+    "checkOutDate": "2023-07-25",
+    "numberOfGuests": 1,
+    "destinationCity": "Madrid",
+    "selectedIdHotel": 8,
+    "selectedRoom": {
+      "id": 8,
+      "name": "Habitación 808",
+      "price": 130,
+      "type": "Deluxe",
+      "tax": 13,
+      "status": true,
+      "reserved": true
+    },
+    "guestDetails": {
+      "fullName": "Luisa Martínez",
+      "dateOfBirth": "1987-11-20",
+      "gender": "Femenino",
+      "documentType": "DNI",
+      "documentNumber": "78901234",
+      "email": "luisa@example.com",
+      "contactNumber": "8901234567",
+      "emergencyContact": {
+        "fullName": "Carlos Gómez",
+        "phoneNumber": "4567890123"
+      }
+    },
+    "isReservationConfirmed": true
+  },
+  {
+    "uuid": "3",
+    "checkInDate": "2023-08-15",
+    "checkOutDate": "2023-08-20",
+    "numberOfGuests": 2,
+    "destinationCity": "Valencia",
+    "selectedIdHotel": 10,
+    "selectedRoom": {
+      "id": 10,
+      "name": "Habitación 1010",
+      "price": 100,
+      "type": "Estándar",
+      "tax": 10,
+      "status": true,
+      "reserved": true
+    },
+    "guestDetails": {
+      "fullName": "Pedro García",
+      "dateOfBirth": "1995-09-10",
+      "gender": "Masculino",
+      "documentType": "DNI",
+      "documentNumber": "56789012",
+      "email": "pedro@example.com",
+      "contactNumber": "9012345678",
+      "emergencyContact": {
+        "fullName": "Ana López",
+        "phoneNumber": "3456789012"
+      }
+    },
+    "isReservationConfirmed": false
+  },
+  {
+    "uuid": "4",
+    "checkInDate": "2023-09-05",
+    "checkOutDate": "2023-09-10",
+    "numberOfGuests": 1,
+    "destinationCity": "Sevilla",
+    "selectedIdHotel": 2,
+    "selectedRoom": {
+      "id": 2,
+      "name": "Habitación 202",
+      "price": 90,
+      "type": "Estándar",
+      "tax": 9,
+      "status": true,
+      "reserved": true
+    },
+    "guestDetails": {
+      "fullName": "Javier Fernández",
+      "dateOfBirth": "1985-07-25",
+      "gender": "Masculino",
+      "documentType": "DNI",
+      "documentNumber": "34567890",
+      "email": "javier@example.com",
+      "contactNumber": "2345678901",
+      "emergencyContact": {
+        "fullName": "Elena Ramírez",
+        "phoneNumber": "5678901234"
+      }
+    },
+    "isReservationConfirmed": true
+  },
+  {
+    "uuid": "5",
+    "checkInDate": "2023-10-20",
+    "checkOutDate": "2023-10-25",
+    "numberOfGuests": 2,
+    "destinationCity": "Bilbao",
+    "selectedIdHotel": 6,
+    "selectedRoom": {
+      "id": 6,
+      "name": "Habitación 606",
+      "price": 110,
+      "type": "Deluxe",
+      "tax": 11,
+      "status": true,
+      "reserved": true
+    },
+    "guestDetails": {
+      "fullName": "Sofía López",
+      "dateOfBirth": "1992-03-12",
+      "gender": "Femenino",
+      "documentType": "DNI",
+      "documentNumber": "90123456",
+      "email": "sofia@example.com",
+      "contactNumber": "7890123456",
+      "emergencyContact": {
+        "fullName": "Miguel Torres",
+        "phoneNumber": "6789012345"
+      }
+    },
+    "isReservationConfirmed": true
+  },
+  {
+    "uuid": "6",
+    "checkInDate": "2023-11-15",
+    "checkOutDate": "2023-11-20",
+    "numberOfGuests": 1,
+    "destinationCity": "Málaga",
+    "selectedIdHotel": 3,
+    "selectedRoom": {
+      "id": 3,
+      "name": "Habitación 303",
+      "price": 95,
+      "type": "Estándar",
+      "tax": 9.5,
+      "status": true,
+      "reserved": true
+    },
+    "guestDetails": {
+      "fullName": "Carlos González",
+      "dateOfBirth": "1993-09-05",
+      "gender": "Masculino",
+      "documentType": "DNI",
+      "documentNumber": "67890123",
+      "email": "carlos@example.com",
+      "contactNumber": "6789012345",
+      "emergencyContact": {
+        "fullName": "Laura Sánchez",
+        "phoneNumber": "4567890123"
+      }
+    },
+    "isReservationConfirmed": true
+  },
+  {
+    "uuid": "7",
+    "checkInDate": "2023-12-10",
+    "checkOutDate": "2023-12-15",
+    "numberOfGuests": 2,
+    "destinationCity": "Granada",
+    "selectedIdHotel": 5,
+    "selectedRoom": {
+      "id": 5,
+      "name": "Habitación 505",
+      "price": 105,
+      "type": "Deluxe",
+      "tax": 10.5,
+      "status": true,
+      "reserved": true
+    },
+    "guestDetails": {
+      "fullName": "Ana Ramírez",
+      "dateOfBirth": "1988-12-30",
+      "gender": "Femenino",
+      "documentType": "DNI",
+      "documentNumber": "01234567",
+      "email": "ana@example.com",
+      "contactNumber": "5678901234",
+      "emergencyContact": {
+        "fullName": "David Martín",
+        "phoneNumber": "3456789012"
+      }
+    },
+    "isReservationConfirmed": false
+  },
+  {
+    "uuid": "8",
+    "checkInDate": "2024-01-20",
+    "checkOutDate": "2024-01-25",
+    "numberOfGuests": 1,
+    "destinationCity": "Zaragoza",
+    "selectedIdHotel": 7,
+    "selectedRoom": {
+      "id": 7,
+      "name": "Habitación 707",
+      "price": 115,
+      "type": "Deluxe",
+      "tax": 11.5,
+      "status": true,
+      "reserved": true
+    },
+    "guestDetails": {
+      "fullName": "Marta Herrera",
+      "dateOfBirth": "1991-08-18",
+      "gender": "Femenino",
+      "documentType": "DNI",
+      "documentNumber": "23456789",
+      "email": "marta@example.com",
+      "contactNumber": "4567890123",
+      "emergencyContact": {
+        "fullName": "Antonio Rodríguez",
+        "phoneNumber": "1234567890"
+      }
+    },
+    "isReservationConfirmed": true
+  },
+  {
+    "uuid": "9",
+    "checkInDate": "2024-02-15",
+    "checkOutDate": "2024-02-20",
+    "numberOfGuests": 2,
+    "destinationCity": "Alicante",
+    "selectedIdHotel": 9,
+    "selectedRoom": {
+      "id": 9,
+      "name": "Habitación 909",
+      "price": 125,
+      "type": "Deluxe",
+      "tax": 12.5,
+      "status": true,
+      "reserved": true
+    },
+    "guestDetails": {
+      "fullName": "Juan Torres",
+      "dateOfBirth": "1994-02-02",
+      "gender": "Masculino",
+      "documentType": "DNI",
+      "documentNumber": "45678901",
+      "email": "juan@example.com",
+      "contactNumber": "3456789012",
+      "emergencyContact": {
+        "fullName": "María González",
+        "phoneNumber": "9012345678"
+      }
+    },
+    "isReservationConfirmed": true
+  },
+  {
+    "uuid": "10",
+    "checkInDate": "2024-03-10",
+    "checkOutDate": "2024-03-15",
+    "numberOfGuests": 1,
+    "destinationCity": "Valencia",
+    "selectedIdHotel": 1,
+    "selectedRoom": {
+      "id": 1,
+      "name": "Habitación 101",
+      "price": 100,
+      "type": "Estándar",
+      "tax": 10,
+      "status": true,
+      "reserved": true
+    },
+    "guestDetails": {
+      "fullName": "Laura Martínez",
+      "dateOfBirth": "1996-01-10",
+      "gender": "Femenino",
+      "documentType": "DNI",
+      "documentNumber": "56789012",
+      "email": "laura@example.com",
+      "contactNumber": "6789012345",
+      "emergencyContact": {
+        "fullName": "Pedro Sánchez",
+        "phoneNumber": "2345678901"
+      }
+    },
+    "isReservationConfirmed": true
+  }
+]
