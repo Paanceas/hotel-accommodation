@@ -20,7 +20,7 @@ Syed Sahar Ali Raza
       <div class="container">
         <!--BLOCK ROW START-->
         <div class="row">
-          <div class="col-md-4" *ngFor="let room of hotel?.rooms">
+          <div class="col-md-4 mb-5" *ngFor="let room of hotel?.rooms">
             <!--PRICE CONTENT START-->
             <div class="generic_content clearfix">
               <!--HEAD PRICE DETAIL START-->
@@ -50,18 +50,15 @@ Syed Sahar Ali Raza
               <!--FEATURE LIST START-->
               <div class="generic_feature_list">
                 <ul>
-                  <li><span>2GB</span> Bandwidth</li>
-                  <li><span>150GB</span> Storage</li>
-                  <li><span>12</span> Accounts</li>
-                  <li><span>7</span> Host Domain</li>
-                  <li><span>24/7</span> Support</li>
+                  <li><span>Habitación</span> {{room.name}}</li>
+                  <li><span>impuesto</span> {{room.tax}}%</li>
                 </ul>
               </div>
               <!--//FEATURE LIST END-->
 
               <!--BUTTON START-->
               <div class="generic_price_btn clearfix">
-                <a class="" href="">Sign up</a>
+                <a class="" href="">Reservar</a>
               </div>
               <!--//BUTTON END-->
             </div>

@@ -67,6 +67,10 @@ export class Util {
     return this.getInfoLocal('reservationsList');
   }
 
+  delInfoLocal(nom: string): void {
+    localStorage.removeItem(nom)
+  }
+
   getInfoLocal(name:string){
     const hotelsString = localStorage.getItem(name);
     if (hotelsString) {
@@ -75,7 +79,8 @@ export class Util {
     return null;
   }
 
-  saveInfoLocal(name:string, data:object|[]){
+  saveInfoLocal(name:string, data:any|[]){
+    this.delInfoLocal(name);
     const hotelsString = JSON.stringify(data);
     localStorage.setItem(name, hotelsString);
   }

@@ -5,29 +5,29 @@
     <div class="container">
       <div class="row justify-content-center align-items-center">
         <div class="col-md-6 mt-5">
-          <form class="form-inline">
+          <form class="form-inline" [formGroup]="reservationForm">
             <h4 class="w-100">Busca el mejor Hotel</h4>
             <div class="form-group w-50 mb-2">
               <label for="checkInDate">Fecha de entrada:</label>
-              <input type="date" class="form-control" id="checkInDate" name="checkInDate">
+              <input type="date" class="form-control" id="checkInDate" name="checkInDate" formControlName="checkInDate">
             </div>
             <div class="form-group w-50 mb-2">
               <label for="checkOutDate">Fecha de salida:</label>
-              <input type="date" class="form-control" id="checkOutDate" name="checkOutDate">
+              <input type="date" class="form-control" id="checkOutDate" name="checkOutDate" formControlName="checkOutDate">
             </div>
             <div class="form-group w-50 mb-2">
               <label for="numberOfGuests">Cantidad de personas:</label>
-              <input type="number" class="form-control" id="numberOfGuests" name="numberOfGuests">
+              <input type="number" class="form-control" id="numberOfGuests" name="numberOfGuests" formControlName="numberOfGuests">
             </div>
             <div class="form-group w-50 mb-2">
               <label for="destinationCity">Ciudad de destino:</label>
-              <select class="form-control" id="citySelect">
+              <select class="form-control" id="destinationCity" name="destinationCity" formControlName="destinationCity">
                 <option value="">Selecciona una ciudad</option>
                 <option *ngFor="let city of cities" [value]="city">{{ city }}</option>
               </select>
             </div>
             <div class="form-group w-100">
-              <button type="submit" class="w-100 btn btn-primary" (click)="search()">Buscar</button>
+              <button [disabled]="reservationForm.invalid"  class="w-100 btn btn-primary" (click)="search()">Buscar</button>
             </div>
           </form>
         </div>
@@ -37,7 +37,7 @@
   <div class="titulo">
     Lorem, ipsum dolor sit amet consectetur adipisicing elit. Sequi, nesciunt tenetur molestiae, accusamus tempore a corrupti quae eveniet excepturi quo dignissimos corporis ipsa! Accusamus facere, praesentium doloribus soluta delectus architecto debitis sapiente. Neque maxime, quo mollitia veniam est, explicabo aut corrupti maiores corporis earum tempore porro, ex nostrum assumenda ea!
   </div>
-  <div class="hoteles">
+  <div class="hoteles" *ngIf="isSearch">
       <div class="w-50 reset" *ngFor="let hotel of HotelList">
         <div class="w-100" *ngIf="hotel.status" >
           <div class="hotel-card bg-white rounded-lg shadow overflow-hidden d-block d-lg-flex">

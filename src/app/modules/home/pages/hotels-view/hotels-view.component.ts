@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Hotel } from '@modules/hotel/models/Hotel';
+import { ReservationConfirmation } from '@modules/reservations/models/Reservation';
 import { Util } from 'src/app/common/util';
 import { SpinnerService } from 'src/app/services/spinner.service';
 
@@ -14,18 +16,43 @@ export class HotelsViewComponent implements OnInit {
   public HotelList: Hotel[] = [];
   private util:Util = new Util();
 
-  constructor(private _spinner: SpinnerService){}
+  private reservation:ReservationConfirmation | null;
+  public reservationForm: FormGroup = new FormGroup({});
+  public isSearch: boolean = false;
+
+  constructor(private _spinner: SpinnerService, private formBuilder: FormBuilder){
+    this.reservation = null;
+  }
 
   ngOnInit(): void {
     this.HotelList = this.util.setHotelList().filter((h:Hotel) => h.status);
+    this.util.delInfoLocal('reservationInfo');
+    this.createHotelForm();
   }
 
   search(){
-    this._spinner.loader(true);
-    setTimeout(() => {
-      this.util.msnShow("Búsqueda exitosa")
-      this._spinner.loader(false);
-    }, 1000);
+    if(this.reservationForm.valid){
+      this._spinner.loader(true);
+      setTimeout(() => {
+        this.reservation = {
+          ...this.reservationForm.value
+        }
+        this.util.msnShow("Búsqueda exitosa");
+        this._spinner.loader(false);
+        this.isSearch = true;
+        this.util.saveInfoLocal('reservationInfo', this.reservation);
+      }, 500);
+    }else{
+      this.util.msnShow('Verifica la información suministrada', 'warning');
+    }
   }
 
+  createHotelForm() {
+    this.reservationForm = this.formBuilder.group({
+      checkInDate: [null, Validators.required],
+      checkOutDate: [null, Validators.required],
+      numberOfGuests: [null, Validators.required],
+      destinationCity: [null, Validators.required]
+    });
+  }
 }
