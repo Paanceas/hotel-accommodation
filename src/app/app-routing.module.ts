@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { DashboardPageComponent } from './modules/dashboard/pages/dashboard-page/dashboard-page.component';
+import { SessionGuard } from './guards/session.guard';
 
 const routes: Routes = [ //TODO: router-outlet (Padre)
   {
@@ -15,7 +16,7 @@ const routes: Routes = [ //TODO: router-outlet (Padre)
     path: 'dashboard',//TODO (Private) 🔴🔴
     component: DashboardPageComponent,
     loadChildren: () => import(`./modules/dashboard/dashboard.module`).then(m => m.DashboardModule),
-    //canActivate: [SessionGuard]
+    canActivate:[SessionGuard]
   }
 
 ];

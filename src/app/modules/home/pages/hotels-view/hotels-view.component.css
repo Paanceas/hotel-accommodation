@@ -148,3 +148,13 @@ form {
 .carousel .carousel-control-next {
 	background: linear-gradient(to left, #333333bb, #33333300);
 }
+
+
+@media screen and (max-width: 765px) {
+  /* Aquí puedes agregar los estilos específicos para una pantalla de 765px o más */
+  /* Por ejemplo: */
+  .w-50 {
+    width: 100% !important;
+  }
+  /* ... */
+}

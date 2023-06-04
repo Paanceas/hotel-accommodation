@@ -21,8 +21,8 @@ export class ReservationlistPageComponent implements OnInit  {
   }
 
   goToViewReservation(reservation:HotelReservation){
-    this.util.setObj('editReservation', reservation);
-    this._router.navigate(["/dashboard/reservaciones/crear"]);
+    this.util.setObj('editReservation', JSON.stringify(reservation));
+    this._router.navigate(["/dashboard/reservaciones/detalle"]);
   }
 
   reservaciones(reservation:HotelReservation) {
