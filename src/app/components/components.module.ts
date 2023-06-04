@@ -6,23 +6,9 @@ import { RouterModule } from '@angular/router';
 import { FormsModule } from '@angular/forms';
 import { NavbarComponent } from './navbar/navbar.component';
 
-
-
 @NgModule({
-  declarations: [
-    SidebarComponent,
-    HeaderComponent,
-    NavbarComponent
-  ],
-  imports: [
-    CommonModule,
-    RouterModule,
-    FormsModule
-  ],
-  exports: [
-    SidebarComponent,
-    HeaderComponent,
-    NavbarComponent
-  ]
+  declarations: [SidebarComponent, HeaderComponent, NavbarComponent],
+  imports: [CommonModule, RouterModule, FormsModule],
+  exports: [SidebarComponent, HeaderComponent, NavbarComponent],
 })
-export class ComponentsModule { }
+export class ComponentsModule {}

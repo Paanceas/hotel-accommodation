@@ -8,7 +8,12 @@
 <div class="card shadow mb-4">
   <div class="card-body">
     <table class="table">
-      <caption>Total hoteles: {{HotelList.length}} </caption>
+      <caption>
+        Total hoteles:
+        {{
+          HotelList.length
+        }}
+      </caption>
       <thead class="table-dark">
         <tr>
           <th scope="col"># id</th>
@@ -22,21 +27,42 @@
       </thead>
       <tbody>
         <tr *ngFor="let item of HotelList">
-          <th scope="row">{{item.id}}</th>
-          <td>{{item.name}}</td>
-          <td>{{item.totalAvailableRooms}}</td>
-          <td>{{item.totalReservedRooms}}</td>
-          <td>{{item.totalRooms}}</td>
+          <th scope="row">{{ item.id }}</th>
+          <td>{{ item.name }}</td>
+          <td>{{ item.totalAvailableRooms }}</td>
+          <td>{{ item.totalReservedRooms }}</td>
+          <td>{{ item.totalRooms }}</td>
           <td>
             <label class="switch">
-              <input type="checkbox" [(ngModel)]="item.status" (ngModelChange)="changeStatus(item)">
+              <input
+                type="checkbox"
+                [(ngModel)]="item.status"
+                (ngModelChange)="changeStatus(item)" />
               <span class="slider round"></span>
             </label>
           </td>
           <td>
-            <div class="btn-group" role="group" aria-label="Basic outlined example">
-              <button (click)="goToEditHotel(item.id)" type="button" alt="editar" title="editar" class="btn btn-outline-primary"><i class="fas fa-pencil"></i></button>
-              <button (click)="deleteHotel(item)" type="button" alt="eliminar" title="eliminar" appRoll class="btn btn-outline-primary"><i class="fas fa-trash-alt"></i></button>
+            <div
+              class="btn-group"
+              role="group"
+              aria-label="Basic outlined example">
+              <button
+                (click)="goToEditHotel(item.id)"
+                type="button"
+                alt="editar"
+                title="editar"
+                class="btn btn-outline-primary">
+                <i class="fas fa-pencil"></i>
+              </button>
+              <button
+                (click)="deleteHotel(item)"
+                type="button"
+                alt="eliminar"
+                title="eliminar"
+                appRoll
+                class="btn btn-outline-primary">
+                <i class="fas fa-trash-alt"></i>
+              </button>
             </div>
           </td>
         </tr>

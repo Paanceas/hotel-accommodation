@@ -1,26 +1,33 @@
 <div class="l-navbar" id="navbar">
   <nav class="nav">
-      <div>
-          <div class="nav__brand">
-            <em class="bx bx-menu nav__toggle" id="nav-toggle" (click)="showMenu()"></em>
-            <a href="#" class="nav__logo">
-              <img src="assets/img/logo.png" alt="" width="20">
-              HOTEL DASHBOARD
-            </a>
-          </div>
-          <div class="nav__list">
-            <div *ngFor="let item of listSidebar">
-              <a class="nav__link" [routerLink]="[item.path]" (click)="active(item.id)" [ngClass]="{'active': item.active}">
-                  <em class="nav__icon {{item.icon}}"></em>
-                  <span class="nav__name">{{item.name}}</span>
-              </a>
-            </div>
-          </div>
+    <div>
+      <div class="nav__brand">
+        <em
+          class="bx bx-menu nav__toggle"
+          id="nav-toggle"
+          (click)="showMenu()"></em>
+        <a href="#" class="nav__logo">
+          <img src="assets/img/logo.png" alt="" width="20" />
+          HOTEL DASHBOARD
+        </a>
       </div>
+      <div class="nav__list">
+        <div *ngFor="let item of listSidebar">
+          <a
+            class="nav__link"
+            [routerLink]="[item.path]"
+            (click)="active(item.id)"
+            [ngClass]="{ active: item.active }">
+            <em class="nav__icon {{ item.icon }}"></em>
+            <span class="nav__name">{{ item.name }}</span>
+          </a>
+        </div>
+      </div>
+    </div>
 
-      <a class="nav__link" (click)="closeSession()">
-          <em class="bx bx-log-out nav__icon"></em>
-          <span class="nav__name">Salir</span>
-      </a>
+    <a class="nav__link" (click)="closeSession()">
+      <em class="bx bx-log-out nav__icon"></em>
+      <span class="nav__name">Salir</span>
+    </a>
   </nav>
 </div>

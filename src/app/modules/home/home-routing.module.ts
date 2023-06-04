@@ -7,20 +7,20 @@ import { CreateReservationComponent } from './pages/create-reservation/create-re
 const routes: Routes = [
   {
     path: '',
-    component: HotelsViewComponent
+    component: HotelsViewComponent,
   },
   {
     path: 'details/:id',
-    component: HotelDetailsComponent
+    component: HotelDetailsComponent,
   },
   {
     path: 'reservation',
-    component: CreateReservationComponent
-  }
+    component: CreateReservationComponent,
+  },
 ];
 
 @NgModule({
   imports: [RouterModule.forChild(routes)],
-  exports: [RouterModule]
+  exports: [RouterModule],
 })
-export class HomeRoutingModule { }
+export class HomeRoutingModule {}

@@ -8,15 +8,13 @@ import { Hotel, HotelView } from '@modules/hotel/models/Hotel';
 @Component({
   selector: 'app-hotel-list-page',
   templateUrl: './hotel-list-page.component.html',
-  styleUrls: ['./hotel-list-page.component.css']
+  styleUrls: ['./hotel-list-page.component.css'],
 })
 export class HotelListPageComponent implements OnInit {
-
-
   public HotelList: HotelView[] = [];
-  private util:Util = new Util();
+  private util: Util = new Util();
 
-  constructor(private _router:Router) { }
+  constructor(private _router: Router) {}
 
   ngOnInit(): void {
     this.HotelList = this.calculateStats(this.util.setHotelList());
@@ -31,14 +29,18 @@ export class HotelListPageComponent implements OnInit {
 
     for (const hotel of hotels) {
       const totalRooms = hotel.rooms.length;
-      const totalAvailableRooms = hotel.rooms.filter(room => room.status && !room.reserved).length;
-      const totalReservedRooms = hotel.rooms.filter(room => room.reserved).length;
+      const totalAvailableRooms = hotel.rooms.filter(
+        room => room.status && !room.reserved
+      ).length;
+      const totalReservedRooms = hotel.rooms.filter(
+        room => room.reserved
+      ).length;
 
       const hotelView: HotelView = {
         ...hotel,
         totalRooms,
         totalAvailableRooms,
-        totalReservedRooms
+        totalReservedRooms,
       };
 
       hotelViews.push(hotelView);
@@ -47,26 +49,25 @@ export class HotelListPageComponent implements OnInit {
     return hotelViews;
   }
 
-  goToEditHotel(id:number){
+  goToEditHotel(id: number) {
     this.util.setObj('edit', id);
-    this._router.navigate(["/dashboard/hoteles/crear"]);
+    this._router.navigate(['/dashboard/hoteles/crear']);
   }
 
-  deleteHotel(hotel:Hotel) {
+  deleteHotel(hotel: Hotel) {
     Swal.fire({
       title: `¿Estás seguro de eliminar el Hotel ${hotel.name}?`,
-      text: "¡No podrás revertir esto!",
+      text: '¡No podrás revertir esto!',
       icon: 'warning',
       showCancelButton: true,
       confirmButtonColor: '#3085d6',
       cancelButtonColor: '#d33',
       cancelButtonText: 'Cancelar',
-      confirmButtonText: `Sí eliminar`
-    }).then((result) => {
+      confirmButtonText: `Sí eliminar`,
+    }).then(result => {
       if (result.isConfirmed) {
         console.log(result);
       }
-    })
+    });
   }
-
 }

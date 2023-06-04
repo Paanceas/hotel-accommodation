@@ -1,6 +1,6 @@
 /* You can add global styles to this file, and also import other style files */
-@import "~bootstrap/dist/css/bootstrap.css";
-@import "~animate.css/animate.min.css";
+@import '~bootstrap/dist/css/bootstrap.css';
+@import '~animate.css/animate.min.css';
 @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@600&display=swap');
 
@@ -8,14 +8,14 @@
   --nav-width: 92px;
   /*===== Colores =====*/
   --first-color: #ffef05;
-  --bg-color: #12192C;
-  --sub-color: #F6F6F6;
-  --white-color: #FFF;
+  --bg-color: #12192c;
+  --sub-color: #f6f6f6;
+  --white-color: #fff;
   --silver-color: #f7faff;
   /*===== Fuente y tipografia =====*/
   --body-font: 'Roboto', sans-serif;
   --normal-font-size: 1rem;
-  --small-font-size: .875rem;
+  --small-font-size: 0.875rem;
   /*===== z index =====*/
   --z-fixed: 100;
 }
@@ -27,7 +27,12 @@
   padding: 0;
 }
 
-h1, h2, h3, h4, h5, h6 {
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
   --body-font: 'Poppins', sans-serif;
 }
 
@@ -52,7 +57,7 @@ a {
   background-color: #fff;
   background-clip: border-box;
   border: 1px solid #e3e6f0;
-  border-radius: .35rem
+  border-radius: 0.35rem;
 }
 
 .switch {
@@ -82,7 +87,7 @@ a {
 
 .slider:before {
   position: absolute;
-  content: "";
+  content: '';
   height: 26px;
   width: 26px;
   left: 4px;
@@ -93,11 +98,11 @@ a {
 }
 
 input:checked + .slider {
-  background-color: #2196F3;
+  background-color: #2196f3;
 }
 
 input:focus + .slider {
-  box-shadow: 0 0 1px #2196F3;
+  box-shadow: 0 0 1px #2196f3;
 }
 
 input:checked + .slider:before {

@@ -4,15 +4,14 @@ import { Sidebar } from '../models/Sidebar';
 //import { Sidebar } from '../models/Sidebar';
 
 @Injectable({
-  providedIn: 'root'
+  providedIn: 'root',
 })
 export class GlobalsService {
+  private session: boolean;
+  private session$: Subject<boolean>;
 
-  private session:boolean;
-  private session$:Subject<boolean>;
-
-  private sidebar:Sidebar[];
-  private sidebar$:Subject<Sidebar[]>;
+  private sidebar: Sidebar[];
+  private sidebar$: Subject<Sidebar[]>;
 
   constructor() {
     this.session = false;
@@ -22,24 +21,23 @@ export class GlobalsService {
     this.sidebar$ = new Subject();
   }
 
-  updateSession(value:boolean){
+  updateSession(value: boolean) {
     this.session = value;
     this.session$.next(this.session);
   }
 
-  getSession$(): Observable<boolean>{
+  getSession$(): Observable<boolean> {
     return this.session$.asObservable();
   }
 
-  updateSidebar(value:Sidebar[]){
+  updateSidebar(value: Sidebar[]) {
     this.sidebar = value;
     this.sidebar$.next(this.sidebar);
   }
-  getSidebar(){
+  getSidebar() {
     return this.sidebar;
   }
-  getSidebar$(): Observable<Sidebar[]>{
+  getSidebar$(): Observable<Sidebar[]> {
     return this.sidebar$.asObservable();
   }
-
 }

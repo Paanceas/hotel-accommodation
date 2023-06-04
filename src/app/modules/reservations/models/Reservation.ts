@@ -1,7 +1,7 @@
-import { Room } from "@modules/hotel/models/Hotel";
+import { Room } from '@modules/hotel/models/Hotel';
 
 export interface HotelReservation {
-  uuid:string,
+  uuid: string;
   checkInDate: string; // Fecha de entrada al alojamiento (formato: aaaa-mm-dd)
   checkOutDate: string; // Fecha de salida del alojamiento (formato: aaaa-mm-dd)
   numberOfGuests: number; // Cantidad de personas que se alojarán

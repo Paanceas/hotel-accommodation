@@ -53,13 +53,13 @@
               <strong>Estado de la habitación:</strong>
               {{
                 reservationInfo?.selectedRoom?.status
-                  ? "Disponible"
-                  : "No disponible"
+                  ? 'Disponible'
+                  : 'No disponible'
               }}
             </li>
             <li class="list-group-item">
               <strong>Reserva confirmada:</strong>
-              {{ reservationInfo?.isReservationConfirmed ? "Sí" : "No" }}
+              {{ reservationInfo?.isReservationConfirmed ? 'Sí' : 'No' }}
             </li>
           </ul>
         </div>
@@ -74,15 +74,13 @@
             type="text"
             id="fullName"
             formControlName="fullName"
-            class="form-control"
-          />
+            class="form-control" />
           <div
             *ngIf="
               guestForm.get('fullName')?.invalid &&
               guestForm.get('fullName')?.touched
             "
-            class="text-danger"
-          >
+            class="text-danger">
             Nombre completo requerido
           </div>
         </div>
@@ -93,15 +91,13 @@
             type="date"
             id="dateOfBirth"
             formControlName="dateOfBirth"
-            class="form-control"
-          />
+            class="form-control" />
           <div
             *ngIf="
               guestForm.get('dateOfBirth')?.invalid &&
               guestForm.get('dateOfBirth')?.touched
             "
-            class="text-danger"
-          >
+            class="text-danger">
             Fecha de nacimiento requerida
           </div>
         </div>
@@ -118,8 +114,7 @@
               guestForm.get('gender')?.invalid &&
               guestForm.get('gender')?.touched
             "
-            class="text-danger"
-          >
+            class="text-danger">
             Género requerido
           </div>
         </div>
@@ -129,8 +124,7 @@
           <select
             id="documentType"
             formControlName="documentType"
-            class="form-control"
-          >
+            class="form-control">
             <option value="">Seleccionar tipo de documento</option>
             <option value="cedula">Cédula</option>
             <option value="pasaporte">Pasaporte</option>
@@ -141,8 +135,7 @@
               guestForm.get('documentType')?.invalid &&
               guestForm.get('documentType')?.touched
             "
-            class="text-danger"
-          >
+            class="text-danger">
             Tipo de documento requerido
           </div>
         </div>
@@ -153,15 +146,13 @@
             type="text"
             id="documentNumber"
             formControlName="documentNumber"
-            class="form-control"
-          />
+            class="form-control" />
           <div
             *ngIf="
               guestForm.get('documentNumber')?.invalid &&
               guestForm.get('documentNumber')?.touched
             "
-            class="text-danger"
-          >
+            class="text-danger">
             Número de documento requerido
           </div>
         </div>
@@ -172,14 +163,12 @@
             type="email"
             id="email"
             formControlName="email"
-            class="form-control"
-          />
+            class="form-control" />
           <div
             *ngIf="
               guestForm.get('email')?.invalid && guestForm.get('email')?.touched
             "
-            class="text-danger"
-          >
+            class="text-danger">
             Correo electrónico requerido y debe ser válido
           </div>
         </div>
@@ -190,15 +179,13 @@
             type="text"
             id="contactNumber"
             formControlName="contactNumber"
-            class="form-control"
-          />
+            class="form-control" />
           <div
             *ngIf="
               guestForm.get('contactNumber')?.invalid &&
               guestForm.get('contactNumber')?.touched
             "
-            class="text-danger"
-          >
+            class="text-danger">
             Número de teléfono requerido
           </div>
         </div>
@@ -212,15 +199,13 @@
               type="text"
               id="emergencyFullName"
               formControlName="fullName"
-              class="form-control"
-            />
+              class="form-control" />
             <div
               *ngIf="
                 guestForm.get('emergencyContact.fullName')?.invalid &&
                 guestForm.get('emergencyContact.fullName')?.touched
               "
-              class="text-danger"
-            >
+              class="text-danger">
               Nombre completo del contacto de emergencia requerido
             </div>
           </div>
@@ -231,21 +216,24 @@
               type="text"
               id="emergencyPhoneNumber"
               formControlName="phoneNumber"
-              class="form-control"
-            />
+              class="form-control" />
             <div
               *ngIf="
                 guestForm.get('emergencyContact.phoneNumber')?.invalid &&
                 guestForm.get('emergencyContact.phoneNumber')?.touched
               "
-              class="text-danger"
-            >
+              class="text-danger">
               Teléfono del contacto de emergencia requerido
             </div>
           </div>
         </div>
 
-        <button [disabled]="guestForm.invalid" type="submit" class="btn btn-primary">Confirmar Reserva</button>
+        <button
+          [disabled]="guestForm.invalid"
+          type="submit"
+          class="btn btn-primary">
+          Confirmar Reserva
+        </button>
       </form>
     </div>
   </div>

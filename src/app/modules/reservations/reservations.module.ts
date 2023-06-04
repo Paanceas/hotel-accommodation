@@ -7,18 +7,14 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { RouterModule } from '@angular/router';
 import { ReservationPageComponent } from './pages/reservation-page/reservation-page.component';
 
-
 @NgModule({
-  declarations: [
-    ReservationlistPageComponent,
-    ReservationPageComponent
-  ],
+  declarations: [ReservationlistPageComponent, ReservationPageComponent],
   imports: [
     CommonModule,
     ReservationsRoutingModule,
     RouterModule,
     FormsModule,
-    ReactiveFormsModule
-  ]
+    ReactiveFormsModule,
+  ],
 })
-export class ReservationsModule { }
+export class ReservationsModule {}

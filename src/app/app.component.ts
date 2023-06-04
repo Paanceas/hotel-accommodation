@@ -1,10 +1,9 @@
-import { Component, OnInit } from '@angular/core';
-import { SpinnerService } from './services/spinner.service';
+import { Component } from '@angular/core';
 
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
-  styleUrls: ['./app.component.css']
+  styleUrls: ['./app.component.css'],
 })
 export class AppComponent {
   title = 'hotel-accommodation';

@@ -10,20 +10,41 @@
         <div class="col-md-6">
           <h3>Información de la Reserva</h3>
           <ul class="list-group">
-            <li class="list-group-item"><strong>UUID:</strong> {{ reservation?.uuid }}</li>
-            <li class="list-group-item"><strong>Check-in:</strong> {{ reservation?.checkInDate }}</li>
-            <li class="list-group-item"><strong>Check-out:</strong> {{ reservation?.checkOutDate }}</li>
-            <li class="list-group-item"><strong>Número de huéspedes:</strong> {{ reservation?.numberOfGuests }}</li>
-            <li class="list-group-item"><strong>Ciudad de destino:</strong> {{ reservation?.destinationCity }}</li>
-            <li class="list-group-item"><strong>ID del hotel seleccionado:</strong> {{ reservation?.selectedIdHotel }}</li>
+            <li class="list-group-item">
+              <strong>UUID:</strong> {{ reservation?.uuid }}
+            </li>
+            <li class="list-group-item">
+              <strong>Check-in:</strong> {{ reservation?.checkInDate }}
+            </li>
+            <li class="list-group-item">
+              <strong>Check-out:</strong> {{ reservation?.checkOutDate }}
+            </li>
+            <li class="list-group-item">
+              <strong>Número de huéspedes:</strong>
+              {{ reservation?.numberOfGuests }}
+            </li>
+            <li class="list-group-item">
+              <strong>Ciudad de destino:</strong>
+              {{ reservation?.destinationCity }}
+            </li>
+            <li class="list-group-item">
+              <strong>ID del hotel seleccionado:</strong>
+              {{ reservation?.selectedIdHotel }}
+            </li>
           </ul>
         </div>
         <div class="col-md-6">
           <h3>Detalles de la Habitación</h3>
           <ul class="list-group">
-            <li class="list-group-item"><strong>Nombre:</strong> {{ reservation?.selectedRoom?.name }}</li>
-            <li class="list-group-item"><strong>Precio:</strong> ${{ reservation?.selectedRoom?.price }}</li>
-            <li class="list-group-item"><strong>Tipo:</strong> {{ reservation?.selectedRoom?.type }}</li>
+            <li class="list-group-item">
+              <strong>Nombre:</strong> {{ reservation?.selectedRoom?.name }}
+            </li>
+            <li class="list-group-item">
+              <strong>Precio:</strong> ${{ reservation?.selectedRoom?.price }}
+            </li>
+            <li class="list-group-item">
+              <strong>Tipo:</strong> {{ reservation?.selectedRoom?.type }}
+            </li>
           </ul>
         </div>
       </div>
@@ -32,26 +53,52 @@
         <div class="col-md-6">
           <h3>Detalles del Huésped</h3>
           <ul class="list-group">
-            <li class="list-group-item"><strong>Nombre:</strong> {{ reservation?.guestDetails?.fullName }}</li>
-            <li class="list-group-item"><strong>Fecha de Nacimiento:</strong> {{ reservation?.guestDetails?.dateOfBirth }}</li>
-            <li class="list-group-item"><strong>Género:</strong> {{ reservation?.guestDetails?.gender }}</li>
-            <li class="list-group-item"><strong>Tipo de Documento:</strong> {{ reservation?.guestDetails?.documentType }}</li>
-            <li class="list-group-item"><strong>Número de Documento:</strong> {{ reservation?.guestDetails?.documentNumber }}</li>
-            <li class="list-group-item"><strong>Email:</strong> {{ reservation?.guestDetails?.email }}</li>
-            <li class="list-group-item"><strong>Número de Contacto:</strong> {{ reservation?.guestDetails?.contactNumber }}</li>
+            <li class="list-group-item">
+              <strong>Nombre:</strong> {{ reservation?.guestDetails?.fullName }}
+            </li>
+            <li class="list-group-item">
+              <strong>Fecha de Nacimiento:</strong>
+              {{ reservation?.guestDetails?.dateOfBirth }}
+            </li>
+            <li class="list-group-item">
+              <strong>Género:</strong> {{ reservation?.guestDetails?.gender }}
+            </li>
+            <li class="list-group-item">
+              <strong>Tipo de Documento:</strong>
+              {{ reservation?.guestDetails?.documentType }}
+            </li>
+            <li class="list-group-item">
+              <strong>Número de Documento:</strong>
+              {{ reservation?.guestDetails?.documentNumber }}
+            </li>
+            <li class="list-group-item">
+              <strong>Email:</strong> {{ reservation?.guestDetails?.email }}
+            </li>
+            <li class="list-group-item">
+              <strong>Número de Contacto:</strong>
+              {{ reservation?.guestDetails?.contactNumber }}
+            </li>
           </ul>
         </div>
         <div class="col-md-6">
           <h3>Contacto de Emergencia</h3>
           <ul class="list-group">
-            <li class="list-group-item"><strong>Nombre:</strong> {{ reservation?.guestDetails?.emergencyContact?.fullName }}</li>
-            <li class="list-group-item"><strong>Teléfono:</strong> {{ reservation?.guestDetails?.emergencyContact?.phoneNumber }}</li>
+            <li class="list-group-item">
+              <strong>Nombre:</strong>
+              {{ reservation?.guestDetails?.emergencyContact?.fullName }}
+            </li>
+            <li class="list-group-item">
+              <strong>Teléfono:</strong>
+              {{ reservation?.guestDetails?.emergencyContact?.phoneNumber }}
+            </li>
           </ul>
         </div>
       </div>
 
-      <h3 class="mt-3"><strong>Reserva Confirmada:</strong> {{ reservation?.isReservationConfirmed ? 'Sí' : 'No' }}</h3>
+      <h3 class="mt-3">
+        <strong>Reserva Confirmada:</strong>
+        {{ reservation?.isReservationConfirmed ? 'Sí' : 'No' }}
+      </h3>
     </div>
-
   </div>
 </div>

@@ -12,25 +12,24 @@ import { FormControl, FormGroup, Validators } from '@angular/forms';
 @Component({
   selector: 'app-login-page',
   templateUrl: './login-page.component.html',
-  styleUrls: ['./login-page.component.css']
+  styleUrls: ['./login-page.component.css'],
 })
 export class LoginPageComponent {
-
   private util: Util = new Util();
 
   public formLogin: FormGroup = new FormGroup({});
-
 
   public user: User;
 
   constructor(
     private _spinner: SpinnerService,
     private _global: GlobalsService,
-    private _router:Router){
-      this.user = {
-        password: '',
-        user: ''
-      };
+    private _router: Router
+  ) {
+    this.user = {
+      password: '',
+      user: '',
+    };
   }
 
   ngOnInit(): void {
@@ -42,41 +41,41 @@ export class LoginPageComponent {
   private resetUser() {
     this.user = {
       password: '',
-      user: ''
+      user: '',
     };
-    this.formLogin = new FormGroup(
-      {
-        user: new FormControl('',[
-          Validators.required
-        ]),
-        password: new FormControl('', [
-          Validators.required
-        ])
-      }
-    );
+    this.formLogin = new FormGroup({
+      user: new FormControl('', [Validators.required]),
+      password: new FormControl('', [Validators.required]),
+    });
   }
 
   loadSession() {
     this.user = this.formLogin.value;
-    if(this.util.validObject(this.user)){
+    if (this.util.validObject(this.user)) {
       this._spinner.loader(true);
       setTimeout(() => {
-        const response:any = userSession.default;
-        if(
+        const response: any = userSession.default;
+        if (
           this.user.user === response.usuario &&
           this.util.encoding(this.user.password) === response.password
-        ){
-          this.util.setObj("token", JSON.stringify('828fbcc651f82f21e0b6fc0c23a4f5c4'));
-          this.util.setObj("usuario", JSON.stringify(response));
+        ) {
+          this.util.setObj(
+            'token',
+            JSON.stringify('828fbcc651f82f21e0b6fc0c23a4f5c4')
+          );
+          this.util.setObj('usuario', JSON.stringify(response));
           this._global.updateSession(true);
           this._router.navigate(['/dashboard']);
-        }else {
-          Swal.fire('Usuario no encontrado', `Revisa las credenciales para ${this.user.user}`, 'warning');
+        } else {
+          Swal.fire(
+            'Usuario no encontrado',
+            `Revisa las credenciales para ${this.user.user}`,
+            'warning'
+          );
           this.resetUser();
         }
         this._spinner.loader(false);
       }, 1000);
     }
   }
-
 }

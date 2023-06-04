@@ -7,39 +7,37 @@ import Swal from 'sweetalert2';
 @Component({
   selector: 'app-reservationlist-page',
   templateUrl: './reservationlist-page.component.html',
-  styleUrls: ['./reservationlist-page.component.css']
+  styleUrls: ['./reservationlist-page.component.css'],
 })
-export class ReservationlistPageComponent implements OnInit  {
+export class ReservationlistPageComponent implements OnInit {
+  public reservationsList: HotelReservation[] = [];
+  private util: Util = new Util();
 
-  public reservationsList:HotelReservation [] = [];
-  private util:Util = new Util();
-
-  constructor(private _router:Router) { }
+  constructor(private _router: Router) {}
 
   ngOnInit(): void {
     this.reservationsList = this.util.setReservationsList();
   }
 
-  goToViewReservation(reservation:HotelReservation){
+  goToViewReservation(reservation: HotelReservation) {
     this.util.setObj('editReservation', JSON.stringify(reservation));
-    this._router.navigate(["/dashboard/reservaciones/detalle"]);
+    this._router.navigate(['/dashboard/reservaciones/detalle']);
   }
 
-  reservaciones(reservation:HotelReservation) {
+  reservaciones(reservation: HotelReservation) {
     Swal.fire({
       title: `¿Estás seguro de eliminar la reserva de ${reservation.guestDetails.fullName}?`,
-      text: "¡No podrás revertir esto!",
+      text: '¡No podrás revertir esto!',
       icon: 'warning',
       showCancelButton: true,
       confirmButtonColor: '#3085d6',
       cancelButtonColor: '#d33',
       cancelButtonText: 'Cancelar',
-      confirmButtonText: `Sí eliminar`
-    }).then((result:any) => {
+      confirmButtonText: `Sí eliminar`,
+    }).then((result: any) => {
       if (result.isConfirmed) {
         console.log(result);
       }
-    })
+    });
   }
-
 }

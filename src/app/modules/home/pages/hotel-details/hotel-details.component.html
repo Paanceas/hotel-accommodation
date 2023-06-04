@@ -11,7 +11,10 @@ Syed Sahar Ali Raza
           <div class="col-md-12 mt-4">
             <!--PRICE HEADING START-->
             <div class="price-heading clearfix">
-              <h1>Habitaciones disponibles del Hotel <strong> {{hotel?.name}}</strong></h1>
+              <h1>
+                Habitaciones disponibles del Hotel
+                <strong> {{ hotel?.name }}</strong>
+              </h1>
             </div>
             <!--//PRICE HEADING END-->
           </div>
@@ -30,7 +33,7 @@ Syed Sahar Ali Raza
                   <!--HEAD START-->
                   <div class="head_bg"></div>
                   <div class="head">
-                    <span>{{room.type}}</span>
+                    <span>{{ room.type }}</span>
                   </div>
                   <!--//HEAD END-->
                 </div>
@@ -40,7 +43,7 @@ Syed Sahar Ali Raza
                 <div class="generic_price_tag clearfix">
                   <span class="price">
                     <span class="sign">$</span>
-                    <span class="currency">{{room.price}}</span>
+                    <span class="currency">{{ room.price }}</span>
                   </span>
                 </div>
                 <!--//PRICE END-->
@@ -50,8 +53,8 @@ Syed Sahar Ali Raza
               <!--FEATURE LIST START-->
               <div class="generic_feature_list">
                 <ul>
-                  <li><span>Habitación</span> {{room.name}}</li>
-                  <li><span>impuesto</span> {{room.tax}}%</li>
+                  <li><span>Habitación</span> {{ room.name }}</li>
+                  <li><span>impuesto</span> {{ room.tax }}%</li>
                 </ul>
               </div>
               <!--//FEATURE LIST END-->

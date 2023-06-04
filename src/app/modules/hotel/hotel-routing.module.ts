@@ -6,20 +6,20 @@ import { CreateHotelPageComponent } from './pages/create-hotel-page/create-hotel
 const routes: Routes = [
   {
     path: '',
-    component: HotelListPageComponent
+    component: HotelListPageComponent,
   },
   {
     path: 'consulta',
-    component: HotelListPageComponent
+    component: HotelListPageComponent,
   },
   {
     path: 'crear',
-    component: CreateHotelPageComponent
+    component: CreateHotelPageComponent,
   },
 ];
 
 @NgModule({
   imports: [RouterModule.forChild(routes)],
-  exports: [RouterModule]
+  exports: [RouterModule],
 })
-export class HotelRoutingModule { }
+export class HotelRoutingModule {}

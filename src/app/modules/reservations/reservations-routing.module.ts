@@ -6,16 +6,16 @@ import { ReservationPageComponent } from './pages/reservation-page/reservation-p
 const routes: Routes = [
   {
     path: '',
-    component: ReservationlistPageComponent
+    component: ReservationlistPageComponent,
   },
   {
     path: 'detalle',
-    component: ReservationPageComponent
+    component: ReservationPageComponent,
   },
 ];
 
 @NgModule({
   imports: [RouterModule.forChild(routes)],
-  exports: [RouterModule]
+  exports: [RouterModule],
 })
-export class ReservationsRoutingModule { }
+export class ReservationsRoutingModule {}

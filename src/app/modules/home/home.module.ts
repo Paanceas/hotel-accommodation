@@ -9,12 +9,11 @@ import { HotelDetailsComponent } from './pages/hotel-details/hotel-details.compo
 import { ComponentsModule } from 'src/app/components/components.module';
 import { CreateReservationComponent } from './pages/create-reservation/create-reservation.component';
 
-
 @NgModule({
   declarations: [
     HotelsViewComponent,
     HotelDetailsComponent,
-    CreateReservationComponent
+    CreateReservationComponent,
   ],
   imports: [
     CommonModule,
@@ -22,7 +21,7 @@ import { CreateReservationComponent } from './pages/create-reservation/create-re
     ComponentsModule,
     RouterModule,
     FormsModule,
-    ReactiveFormsModule
-  ]
+    ReactiveFormsModule,
+  ],
 })
-export class HomeModule { }
+export class HomeModule {}

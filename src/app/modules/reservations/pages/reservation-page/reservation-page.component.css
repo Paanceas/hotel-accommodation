@@ -15,10 +15,10 @@
   padding: 20px;
 }
 
-h1, h3 {
+h1,
+h3 {
   margin-bottom: 20px;
 }
-
 
 @media screen and (min-width: 765px) {
   /* Aquí puedes agregar los estilos específicos para una pantalla de 765px o más */

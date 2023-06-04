@@ -9,25 +9,51 @@
             <h4 class="w-100">Busca el mejor Hotel</h4>
             <div class="form-group w-50 mb-2">
               <label for="checkInDate">Fecha de entrada:</label>
-              <input type="date" class="form-control" id="checkInDate" name="checkInDate" formControlName="checkInDate">
+              <input
+                type="date"
+                class="form-control"
+                id="checkInDate"
+                name="checkInDate"
+                formControlName="checkInDate" />
             </div>
             <div class="form-group w-50 mb-2">
               <label for="checkOutDate">Fecha de salida:</label>
-              <input type="date" class="form-control" id="checkOutDate" name="checkOutDate" formControlName="checkOutDate">
+              <input
+                type="date"
+                class="form-control"
+                id="checkOutDate"
+                name="checkOutDate"
+                formControlName="checkOutDate" />
             </div>
             <div class="form-group w-50 mb-2">
               <label for="numberOfGuests">Cantidad de personas:</label>
-              <input type="number" class="form-control" id="numberOfGuests" name="numberOfGuests" formControlName="numberOfGuests">
+              <input
+                type="number"
+                class="form-control"
+                id="numberOfGuests"
+                name="numberOfGuests"
+                formControlName="numberOfGuests" />
             </div>
             <div class="form-group w-50 mb-2">
               <label for="destinationCity">Ciudad de destino:</label>
-              <select class="form-control" id="destinationCity" name="destinationCity" formControlName="destinationCity">
+              <select
+                class="form-control"
+                id="destinationCity"
+                name="destinationCity"
+                formControlName="destinationCity">
                 <option value="">Selecciona una ciudad</option>
-                <option *ngFor="let city of cities" [value]="city">{{ city }}</option>
+                <option *ngFor="let city of cities" [value]="city">
+                  {{ city }}
+                </option>
               </select>
             </div>
             <div class="form-group w-100">
-              <button [disabled]="reservationForm.invalid"  class="w-100 btn btn-primary" (click)="search()">Buscar</button>
+              <button
+                [disabled]="reservationForm.invalid"
+                class="w-100 btn btn-primary"
+                (click)="search()">
+                Buscar
+              </button>
             </div>
           </form>
         </div>
@@ -35,51 +61,73 @@
     </div>
   </div>
   <div class="titulo">
-    Lorem, ipsum dolor sit amet consectetur adipisicing elit. Sequi, nesciunt tenetur molestiae, accusamus tempore a corrupti quae eveniet excepturi quo dignissimos corporis ipsa! Accusamus facere, praesentium doloribus soluta delectus architecto debitis sapiente. Neque maxime, quo mollitia veniam est, explicabo aut corrupti maiores corporis earum tempore porro, ex nostrum assumenda ea!
+    Lorem, ipsum dolor sit amet consectetur adipisicing elit. Sequi, nesciunt
+    tenetur molestiae, accusamus tempore a corrupti quae eveniet excepturi quo
+    dignissimos corporis ipsa! Accusamus facere, praesentium doloribus soluta
+    delectus architecto debitis sapiente. Neque maxime, quo mollitia veniam est,
+    explicabo aut corrupti maiores corporis earum tempore porro, ex nostrum
+    assumenda ea!
   </div>
   <div class="hoteles" *ngIf="isSearch">
-      <div class="w-50 reset" *ngFor="let hotel of HotelList">
-        <div class="w-100" *ngIf="hotel.status" >
-          <div class="hotel-card bg-white rounded-lg shadow overflow-hidden d-block d-lg-flex">
-            <div class="hotel-card_images">
-              <div [id]="hotel" class="carousel slide h-100" data-ride="carousel">
-                <div class="carousel-inner h-100">
-                  <div class="carousel-item h-100 active" *ngFor="let img of hotel.images">
-                    <img [src]="img" class="d-block w-100" alt="Hotel Image">
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div class="hotel-card_info p-4">
-              <div class="d-flex align-items-center mb-2">
-                <h5 class="mb-0 mx-2">{{hotel.name}}</h5>
-                <div>
-                  <i class="fa fa-star text-warning"></i>
-                  <i class="fa fa-star text-warning"></i>
-                  <i class="fa fa-star text-warning"></i>
-                  <i class="fa fa-star text-warning"></i>
-                  <i class="fa fa-star text-warning"></i>
-                </div>
-              </div>
-              <div class="d-flex justify-content-between align-items-end">
-                <div class="hotel-card_details">
-                  <div class="text-muted mb-2"><i class="fas fa-map-marker-alt"></i> Bangalore</div>
-                  <div class="mb-2"><span class="badge badge-primary">4.5</span> <a href="#!" class="text-muted">(245 ratings & 56 reviews)</a></div>
-                  <ul class="hotel-checklist pl-0 mb-0">
-                    <li><i class="fa fa-check text-success"></i> Lorem ipsum dolor</li>
-                    <li><i class="fa fa-check text-success"></i> Cras lectus purus, </li>
-                    <li><i class="fa fa-check text-success"></i> ornare eget congue</li>
-                  </ul>
-                </div>
-                <div class="hotel-card_pricing text-center">
-                  <!-- <h3>₹1,300</h3> -->
-                  <button class="btn btn-primary" [routerLink]="['/details', hotel.id]">Ver Habitaciones</button>
+    <div class="w-50 reset" *ngFor="let hotel of HotelList">
+      <div class="w-100" *ngIf="hotel.status">
+        <div
+          class="hotel-card bg-white rounded-lg shadow overflow-hidden d-block d-lg-flex">
+          <div class="hotel-card_images">
+            <div [id]="hotel" class="carousel slide h-100" data-ride="carousel">
+              <div class="carousel-inner h-100">
+                <div
+                  class="carousel-item h-100 active"
+                  *ngFor="let img of hotel.images">
+                  <img [src]="img" class="d-block w-100" alt="Hotel Image" />
                 </div>
               </div>
             </div>
           </div>
+          <div class="hotel-card_info p-4">
+            <div class="d-flex align-items-center mb-2">
+              <h5 class="mb-0 mx-2">{{ hotel.name }}</h5>
+              <div>
+                <i class="fa fa-star text-warning"></i>
+                <i class="fa fa-star text-warning"></i>
+                <i class="fa fa-star text-warning"></i>
+                <i class="fa fa-star text-warning"></i>
+                <i class="fa fa-star text-warning"></i>
+              </div>
+            </div>
+            <div class="d-flex justify-content-between align-items-end">
+              <div class="hotel-card_details">
+                <div class="text-muted mb-2">
+                  <i class="fas fa-map-marker-alt"></i> Bangalore
+                </div>
+                <div class="mb-2">
+                  <span class="badge badge-primary">4.5</span>
+                  <a href="#!" class="text-muted">(245 ratings & 56 reviews)</a>
+                </div>
+                <ul class="hotel-checklist pl-0 mb-0">
+                  <li>
+                    <i class="fa fa-check text-success"></i> Lorem ipsum dolor
+                  </li>
+                  <li>
+                    <i class="fa fa-check text-success"></i> Cras lectus purus,
+                  </li>
+                  <li>
+                    <i class="fa fa-check text-success"></i> ornare eget congue
+                  </li>
+                </ul>
+              </div>
+              <div class="hotel-card_pricing text-center">
+                <!-- <h3>₹1,300</h3> -->
+                <button
+                  class="btn btn-primary"
+                  [routerLink]="['/details', hotel.id]">
+                  Ver Habitaciones
+                </button>
+              </div>
+            </div>
+          </div>
         </div>
+      </div>
     </div>
   </div>
-
 </div>
