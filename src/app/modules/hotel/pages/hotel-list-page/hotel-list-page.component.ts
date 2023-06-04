@@ -54,7 +54,7 @@ export class HotelListPageComponent implements OnInit {
 
   deleteHotel(hotel:Hotel) {
     Swal.fire({
-      title: `¿Estas Seguro de eliminar el Hotel ${hotel.name}?`,
+      title: `¿Estás seguro de eliminar el Hotel ${hotel.name}?`,
       text: "¡No podrás revertir esto!",
       icon: 'warning',
       showCancelButton: true,

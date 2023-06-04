@@ -1,6 +1,6 @@
 import { Room } from "@modules/hotel/models/Hotel";
 
-interface HotelReservation {
+export interface HotelReservation {
   uuid:string,
   checkInDate: string; // Fecha de entrada al alojamiento (formato: aaaa-mm-dd)
   checkOutDate: string; // Fecha de salida del alojamiento (formato: aaaa-mm-dd)
@@ -12,7 +12,7 @@ interface HotelReservation {
   isReservationConfirmed: boolean; // Bandera que indica si la reserva está confirmada
 }
 
-interface GuestDetails {
+export interface GuestDetails {
   fullName: string; // Nombre completo del huésped
   dateOfBirth: string; // Fecha de nacimiento del huésped (formato: aaaa-mm-dd)
   gender: string; // Género del huésped
@@ -23,13 +23,13 @@ interface GuestDetails {
   emergencyContact: EmergencyContact; // Contacto de emergencia
 }
 
-interface ReservationConfirmation {
+export interface ReservationConfirmation {
   reservationId: string; // ID de la reserva
   guestName: string; // Nombre del huésped
   email: string; // Dirección de correo electrónico del huésped
 }
 
-interface EmergencyContact {
+export interface EmergencyContact {
   fullName: string; // Nombre completo del contacto de emergencia
   phoneNumber: string; // Teléfono completo del contacto de emergencia
 }

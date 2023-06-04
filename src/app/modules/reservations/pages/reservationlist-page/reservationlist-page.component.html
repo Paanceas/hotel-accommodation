@@ -1,1 +1,52 @@
-<p>reservationlist-page works!</p>
+<div class="d-flex justify-content-between mb-2">
+  <h1 class="h3 mb-2 text-gray-800">Consulta de Reservas</h1>
+</div>
+<div class="card shadow mb-4">
+  <div class="card-body">
+    <table class="table">
+      <caption>Total Reservas: {{reservationsList.length}} </caption>
+      <thead class="table-dark">
+        <tr>
+          <th scope="col"># uuid</th>
+          <th scope="col">Nombre huésped</th>
+          <th scope="col">Numero huéspedes</th>
+          <th scope="col">Fecha inicio</th>
+          <th scope="col">Fecha fin</th>
+          <th scope="col">Ciudad</th>
+          <th scope="col">Estado reserva</th>
+          <th scope="col"></th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let item of reservationsList">
+          <th scope="row">{{item.uuid}}</th>
+          <td>{{item.guestDetails.fullName}}</td>
+          <td class="text-center">{{item.numberOfGuests}}</td>
+          <td>{{item.checkInDate}}</td>
+          <td>{{item.checkOutDate}}</td>
+          <td>{{item.destinationCity}}</td>
+          <td>
+              <a class="btn btn-success btn-icon-split" *ngIf="!item.isReservationConfirmed">
+                  <span class="icon text-white-50">
+                      <i class="mx-1 fas fa-check"></i>
+                  </span>
+                  <span class="text">Confirmada</span>
+              </a>
+              <a class="btn btn-danger btn-icon-split" *ngIf="item.isReservationConfirmed">
+                <span class="icon text-white-50">
+                    <i class="mx-1 fas fa-close"></i>
+                </span>
+                <span class="text">Cancelada</span>
+            </a>
+          </td>
+          <td>
+            <div class="btn-group" role="group" aria-label="Basic outlined example">
+              <button (click)="goToViewReservation(item)" type="button" alt="ver reservación" title="ver reservación" class="btn btn-outline-primary"><i class="fas fa-eye"></i></button>
+              <button (click)="reservaciones(item)" type="button" alt="eliminar" title="eliminar" appRoll class="btn btn-outline-primary"><i class="fas fa-trash-alt"></i></button>
+            </div>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>

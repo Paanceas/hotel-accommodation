@@ -2,6 +2,7 @@ import Swal, { SweetAlertIcon } from 'sweetalert2';
 import { sha256 } from 'js-sha256';
 
 import * as hotels from '../data/hoteles.json';
+import * as reservations from '../data/reservations.json';
 
 
 export class Util {
@@ -57,6 +58,13 @@ export class Util {
       this.saveInfoLocal('hotelList', hotels.default);
     }
     return this.getInfoLocal('hotelList');
+  }
+
+  setReservationsList(){
+    if(!this.getInfoLocal('reservationsList')){
+      this.saveInfoLocal('reservationsList', reservations.default);
+    }
+    return this.getInfoLocal('reservationsList');
   }
 
   getInfoLocal(name:string){
