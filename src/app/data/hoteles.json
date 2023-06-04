@@ -5,8 +5,8 @@
     "name": "Hotel A",
     "description": "Lorem ipsum dolor sit amet.",
     "images": [
-      "https://source.unsplash.com/random",
-      "https://source.unsplash.com/random"
+      "https://source.unsplash.com/random/?hotel",
+      "https://source.unsplash.com/random/?hotel"
     ],
     "rooms": [
       {
@@ -44,8 +44,8 @@
     "name": "Hotel B",
     "description": "Lorem ipsum dolor sit amet.",
     "images": [
-      "https://source.unsplash.com/random",
-      "https://source.unsplash.com/random"
+      "https://source.unsplash.com/random/?travel",
+      "https://source.unsplash.com/random/?travel"
     ],
     "rooms": [
       {
@@ -83,8 +83,8 @@
     "name": "Hotel C",
     "description": "Lorem ipsum dolor sit amet.",
     "images": [
-      "https://source.unsplash.com/random",
-      "https://source.unsplash.com/random"
+      "https://source.unsplash.com/random/?city",
+      "https://source.unsplash.com/random/?city"
     ],
     "rooms": [
       {
@@ -122,8 +122,8 @@
     "name": "Hotel D",
     "description": "Lorem ipsum dolor sit amet.",
     "images": [
-      "https://source.unsplash.com/random",
-      "https://source.unsplash.com/random"
+      "https://source.unsplash.com/random/?travel",
+      "https://source.unsplash.com/random/?travel"
     ],
     "rooms": [
       {
@@ -161,8 +161,8 @@
     "name": "Hotel E",
     "description": "Lorem ipsum dolor sit amet.",
     "images": [
-      "https://source.unsplash.com/random",
-      "https://source.unsplash.com/random"
+      "https://source.unsplash.com/random/?hotel",
+      "https://source.unsplash.com/random/?hotel"
     ],
     "rooms": [
       {
@@ -200,8 +200,8 @@
     "name": "Hotel F",
     "description": "Lorem ipsum dolor sit amet.",
     "images": [
-      "https://source.unsplash.com/random",
-      "https://source.unsplash.com/random"
+      "https://source.unsplash.com/random/?rooms",
+      "https://source.unsplash.com/random/?rooms"
     ],
     "rooms": [
       {
@@ -239,8 +239,8 @@
     "name": "Hotel G",
     "description": "Lorem ipsum dolor sit amet.",
     "images": [
-      "https://source.unsplash.com/random",
-      "https://source.unsplash.com/random"
+      "https://source.unsplash.com/random/?reservations",
+      "https://source.unsplash.com/random/?reservations"
     ],
     "rooms": [
       {
@@ -278,8 +278,8 @@
     "name": "Hotel H",
     "description": "Lorem ipsum dolor sit amet.",
     "images": [
-      "https://source.unsplash.com/random",
-      "https://source.unsplash.com/random"
+      "https://source.unsplash.com/random/?hotel",
+      "https://source.unsplash.com/random/?hotel"
     ],
     "rooms": [
       {
@@ -317,8 +317,8 @@
     "name": "Hotel I",
     "description": "Lorem ipsum dolor sit amet.",
     "images": [
-      "https://source.unsplash.com/random",
-      "https://source.unsplash.com/random"
+      "https://source.unsplash.com/random/?travel",
+      "https://source.unsplash.com/random/?travel"
     ],
     "rooms": [
       {
@@ -356,8 +356,8 @@
     "name": "Hotel J",
     "description": "Lorem ipsum dolor sit amet.",
     "images": [
-      "https://source.unsplash.com/random",
-      "https://source.unsplash.com/random"
+      "https://source.unsplash.com/random/?airplanes",
+      "https://source.unsplash.com/random/?airplanes"
     ],
     "rooms": [
       {
