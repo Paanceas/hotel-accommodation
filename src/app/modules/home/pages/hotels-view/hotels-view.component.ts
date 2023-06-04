@@ -17,7 +17,7 @@ export class HotelsViewComponent implements OnInit {
   constructor(private _spinner: SpinnerService){}
 
   ngOnInit(): void {
-    this.HotelList = this.util.setHotelList();
+    this.HotelList = this.util.setHotelList().filter((h:Hotel) => h.status);
   }
 
   search(){
