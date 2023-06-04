@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Hotel } from '@modules/hotel/models/Hotel';
-import { ReservationConfirmation } from '@modules/reservations/models/Reservation';
+import { HotelReservation } from '@modules/reservations/models/Reservation';
 import { Util } from 'src/app/common/util';
 import { SpinnerService } from 'src/app/services/spinner.service';
 
@@ -16,7 +16,7 @@ export class HotelsViewComponent implements OnInit {
   public HotelList: Hotel[] = [];
   private util:Util = new Util();
 
-  private reservation:ReservationConfirmation | null;
+  private reservation:HotelReservation | null;
   public reservationForm: FormGroup = new FormGroup({});
   public isSearch: boolean = false;
 

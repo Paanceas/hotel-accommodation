@@ -7,12 +7,14 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { RouterModule } from '@angular/router';
 import { HotelDetailsComponent } from './pages/hotel-details/hotel-details.component';
 import { ComponentsModule } from 'src/app/components/components.module';
+import { CreateReservationComponent } from './pages/create-reservation/create-reservation.component';
 
 
 @NgModule({
   declarations: [
     HotelsViewComponent,
-    HotelDetailsComponent
+    HotelDetailsComponent,
+    CreateReservationComponent
   ],
   imports: [
     CommonModule,

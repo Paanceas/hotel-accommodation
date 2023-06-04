@@ -1,7 +1,8 @@
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute, Params } from '@angular/router';
-import { Room } from '@modules/hotel/models/Hotel';
-import { Hotel } from '@modules/hotel/models/Hotel';
+import { ActivatedRoute, Params, Router } from '@angular/router';
+import { Hotel, Room } from '@modules/hotel/models/Hotel';
+import { HotelReservation } from '@modules/reservations/models/Reservation';
+import { v4 as uuidv4 } from 'uuid';
 import { Util } from 'src/app/common/util';
 
 @Component({
@@ -12,9 +13,15 @@ import { Util } from 'src/app/common/util';
 export class HotelDetailsComponent implements OnInit {
 
   private util: Util = new Util();
-  public hotel:Hotel | null = null;
+  public hotel: Hotel | null = null;
+  private reservation: HotelReservation | null;
 
-  constructor(private rutaActiva: ActivatedRoute) { }
+  constructor(
+    private rutaActiva: ActivatedRoute,
+    private _router:Router
+    ) {
+    this.reservation = null;
+  }
 
   ngOnInit(): void {
     this.rutaActiva.params.subscribe(
@@ -25,11 +32,40 @@ export class HotelDetailsComponent implements OnInit {
     );
   }
 
-  getHotelById(id: number): Hotel | null {
-    const hotelList = this.util.getInfoLocal('hotelList');
-    const hotel:Hotel = hotelList.find((h: Hotel) => h.id === id);
-    hotel.rooms = hotel.rooms.filter((h: Room) => !h.reserved && h.status);
-    return hotel ? hotel : null;
+  private getHotelById(id: number): Hotel | null {
+    try {
+      const hotelList:any[] = this.util.getInfoLocal('hotelList');
+      this.reservation = this.util.getInfoLocal('reservationInfo');
+      const hotel = hotelList.find((h: Hotel) => h.id === id);
+      hotel.rooms = hotel?.rooms.filter((h: Room) => !h.reserved && h.status);
+      this.updateReservation({
+        selectedIdHotel: id
+      })
+      return hotel ? hotel : null;
+    } catch (error) {
+      console.error('error :>> ', error);
+      this._router.navigate(["/"]);
+      return null;
+    }
+  }
+
+  private updateReservation(data:any){
+    const reservation = {
+      ...this.reservation,
+      ...data
+    }
+    this.util.saveInfoLocal('reservationInfo', reservation);
+    this.reservation = this.util.getInfoLocal('reservationInfo');
+  }
+
+  goToReservation(room:Room) {
+    this.util.msnShow(`Se asigno la habitación ${room.name} correctamente`, 'info')
+    this.updateReservation({
+      selectedRoom:room,
+      isReservationConfirmed: false,
+      uuid: uuidv4()
+    });
+    this._router.navigate(["/reservation"]);
   }
 
 }

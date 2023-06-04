@@ -1,0 +1,252 @@
+<div class="body">
+  <app-navbar></app-navbar>
+  <div class="reservationContainer">
+    <div class="reservationInfo">
+      <h2>Información de Reserva</h2>
+      <hr />
+      <div class="card">
+        <div class="card-body">
+          <h5 class="card-title">Detalles de la reserva</h5>
+          <ul class="list-group list-group-flush">
+            <li class="list-group-item">
+              <strong>UUID:</strong> {{ reservationInfo?.uuid }}
+            </li>
+            <li class="list-group-item">
+              <strong>Check-in:</strong> {{ reservationInfo?.checkInDate }}
+            </li>
+            <li class="list-group-item">
+              <strong>Check-out:</strong> {{ reservationInfo?.checkOutDate }}
+            </li>
+            <li class="list-group-item">
+              <strong>Número de huéspedes:</strong>
+              {{ reservationInfo?.numberOfGuests }}
+            </li>
+            <li class="list-group-item">
+              <strong>Ciudad de destino:</strong>
+              {{ reservationInfo?.destinationCity }}
+            </li>
+            <li class="list-group-item">
+              <strong>ID del hotel seleccionado:</strong>
+              {{ reservationInfo?.selectedIdHotel }}
+            </li>
+            <li class="list-group-item">
+              <strong>hotel seleccionado:</strong>
+              {{ hotel?.name }}
+            </li>
+            <li class="list-group-item">
+              <strong>Habitación seleccionada:</strong>
+              {{ reservationInfo?.selectedRoom?.name }}
+            </li>
+            <li class="list-group-item">
+              <strong>Precio de la habitación:</strong>
+              ${{ reservationInfo?.selectedRoom?.price }}
+            </li>
+            <li class="list-group-item">
+              <strong>Tipo de habitación:</strong>
+              {{ reservationInfo?.selectedRoom?.type }}
+            </li>
+            <li class="list-group-item">
+              <strong>Impuesto:</strong>
+              {{ reservationInfo?.selectedRoom?.tax }}%
+            </li>
+            <li class="list-group-item">
+              <strong>Estado de la habitación:</strong>
+              {{
+                reservationInfo?.selectedRoom?.status
+                  ? "Disponible"
+                  : "No disponible"
+              }}
+            </li>
+            <li class="list-group-item">
+              <strong>Reserva confirmada:</strong>
+              {{ reservationInfo?.isReservationConfirmed ? "Sí" : "No" }}
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <div class="reservationForm">
+      <form [formGroup]="guestForm" (ngSubmit)="onSubmit()">
+        <h2>Detalles del huésped</h2>
+        <div class="form-group">
+          <label for="fullName">Nombre completo:</label>
+          <input
+            type="text"
+            id="fullName"
+            formControlName="fullName"
+            class="form-control"
+          />
+          <div
+            *ngIf="
+              guestForm.get('fullName')?.invalid &&
+              guestForm.get('fullName')?.touched
+            "
+            class="text-danger"
+          >
+            Nombre completo requerido
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label for="dateOfBirth">Fecha de nacimiento:</label>
+          <input
+            type="text"
+            id="dateOfBirth"
+            formControlName="dateOfBirth"
+            class="form-control"
+          />
+          <div
+            *ngIf="
+              guestForm.get('dateOfBirth')?.invalid &&
+              guestForm.get('dateOfBirth')?.touched
+            "
+            class="text-danger"
+          >
+            Fecha de nacimiento requerida
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label for="gender">Género:</label>
+          <select id="gender" formControlName="gender" class="form-control">
+            <option value="">Seleccionar género</option>
+            <option value="masculino">Masculino</option>
+            <option value="femenino">Femenino</option>
+          </select>
+          <div
+            *ngIf="
+              guestForm.get('gender')?.invalid &&
+              guestForm.get('gender')?.touched
+            "
+            class="text-danger"
+          >
+            Género requerido
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label for="documentType">Tipo de documento:</label>
+          <select
+            id="documentType"
+            formControlName="documentType"
+            class="form-control"
+          >
+            <option value="">Seleccionar tipo de documento</option>
+            <option value="cedula">Cédula</option>
+            <option value="pasaporte">Pasaporte</option>
+            <option value="dni">DNI</option>
+          </select>
+          <div
+            *ngIf="
+              guestForm.get('documentType')?.invalid &&
+              guestForm.get('documentType')?.touched
+            "
+            class="text-danger"
+          >
+            Tipo de documento requerido
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label for="documentNumber">Número de documento:</label>
+          <input
+            type="text"
+            id="documentNumber"
+            formControlName="documentNumber"
+            class="form-control"
+          />
+          <div
+            *ngIf="
+              guestForm.get('documentNumber')?.invalid &&
+              guestForm.get('documentNumber')?.touched
+            "
+            class="text-danger"
+          >
+            Número de documento requerido
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label for="email">Correo electrónico:</label>
+          <input
+            type="email"
+            id="email"
+            formControlName="email"
+            class="form-control"
+          />
+          <div
+            *ngIf="
+              guestForm.get('email')?.invalid && guestForm.get('email')?.touched
+            "
+            class="text-danger"
+          >
+            Correo electrónico requerido y debe ser válido
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label for="contactNumber">Número de teléfono de contacto:</label>
+          <input
+            type="text"
+            id="contactNumber"
+            formControlName="contactNumber"
+            class="form-control"
+          />
+          <div
+            *ngIf="
+              guestForm.get('contactNumber')?.invalid &&
+              guestForm.get('contactNumber')?.touched
+            "
+            class="text-danger"
+          >
+            Número de teléfono requerido
+          </div>
+        </div>
+
+        <h2>Contacto de emergencia</h2>
+
+        <div formGroupName="emergencyContact">
+          <div class="form-group">
+            <label for="emergencyFullName">Nombre completo:</label>
+            <input
+              type="text"
+              id="emergencyFullName"
+              formControlName="fullName"
+              class="form-control"
+            />
+            <div
+              *ngIf="
+                guestForm.get('emergencyContact.fullName')?.invalid &&
+                guestForm.get('emergencyContact.fullName')?.touched
+              "
+              class="text-danger"
+            >
+              Nombre completo del contacto de emergencia requerido
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label for="emergencyPhoneNumber">Teléfono:</label>
+            <input
+              type="text"
+              id="emergencyPhoneNumber"
+              formControlName="phoneNumber"
+              class="form-control"
+            />
+            <div
+              *ngIf="
+                guestForm.get('emergencyContact.phoneNumber')?.invalid &&
+                guestForm.get('emergencyContact.phoneNumber')?.touched
+              "
+              class="text-danger"
+            >
+              Teléfono del contacto de emergencia requerido
+            </div>
+          </div>
+        </div>
+
+        <button [disabled]="guestForm.invalid" type="submit" class="btn btn-primary">Confirmar Reserva</button>
+      </form>
+    </div>
+  </div>
+</div>
